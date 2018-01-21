@@ -1,0 +1,459 @@
+V 14
+2
+LANG:10001 0 
+LANG:1 0 
+PANEL,-1 -1 1011 598 N "_3DFace" 1
+"$ChannelClicked"
+"main()
+{
+  chClicked=$ChannelClicked;
+  ScanState=false;
+  vfrom.text=100;
+  vstep.text=100;
+  vstop.text=3000;
+  vhold.text=15;
+}" 0
+ E E E E 1 -1 -1 0  142 118
+""0  1
+E "string chClicked;
+bool ScanState,swopt;" 0
+ 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:10001 0 
+14 0
+"vfrom"
+""
+1 142 115.5652173913043 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+0  140 100 243 143
+3 "5d" 5 0 0 0 0 -1  E E E
+14 1
+"vstep"
+""
+1 142 185.5652173913043 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+0  140 170 243 213
+3 "5d" 5 0 0 0 0 -1  E E E
+14 2
+"vstop"
+""
+1 142 252.5652173913043 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+0  140 237 243 280
+3 "5d" 5 0 0 0 0 -1  E E E
+2 3
+"PRIMITIVE_TEXT1"
+""
+1 27 98 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.408504787380316 0 0.7142857142857143 -12.89172020699485 42.42857142857143 0 E 27 98 108 136
+0 2 2 "0s" 0 0 0 65 0 0  27 98 1
+2
+LANG:10001 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+0 2
+LANG:10001 14 Start Voltage:
+LANG:1 14 Start Voltage:
+2 4
+"PRIMITIVE_TEXT2"
+""
+1 27 98 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.408504787380316 0 0.7142857142857143 -12.93552661183472 112.4285714285714 0 E 27 98 108 136
+0 2 2 "0s" 0 0 0 65 0 0  27 98 1
+2
+LANG:10001 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+0 2
+LANG:10001 5 Step:
+LANG:1 5 Step:
+2 5
+"PRIMITIVE_TEXT3"
+""
+1 27 98 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.408504787380316 0 0.7142857142857143 -12.93552661183472 179.4285714285714 0 E 27 98 108 136
+0 2 2 "0s" 0 0 0 65 0 0  27 98 1
+2
+LANG:10001 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+0 2
+LANG:10001 13 Stop Voltage:
+LANG:1 13 Stop Voltage:
+13 6
+"pbScan"
+""
+1 60.75 441 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+0  58.75000000000001 426 158.75 470
+
+T 
+2
+LANG:10001 4 SCAN
+LANG:1 4 SCAN
+"main(mapping event)
+{
+  
+  //chClicked
+  time t,t1,t2;
+  int mint,secs,eTime,gTime,rTime;
+  int val,steps,vVal,start,stop,step,hTime;
+  float iVal;
+  pbScan.enabled=false;
+  pbStop.enabled=true;
+  start=(int)vfrom.text;
+  stop=(int)vstop.text;
+  step=(int)vstep.text;
+  hTime=(int)vhold.text;
+  steps=(stop-start)/step;
+  //steps=steps+1;
+  ScanState=true;
+  //Debug(steps);
+  scnTable.deleteAllLines();
+   dpGet(chClicked+\".readBackSettings.rUp\",rTime);    //ramping
+   //DebugN(rTime);
+   if(rTime==0);
+   {
+    rTime=50;
+    dpSet(chClicked+\".settings.rUp\",rTime);
+   }
+  dpSet(chClicked+\".settings.onOff\",1);
+  
+ for(int i=0; i <= steps+1; i++)
+  {  
+    if(ScanState)
+    {
+     if(i==steps+1)
+      {
+       val=stop;
+      } 
+     else
+      {     
+      val=start+(i*step);
+      }
+      gTime=step/rTime;        //Votage get time
+     dpSetWait(chClicked+\".settings.v0\",val);
+     t1=getCurrentTime();
+     //DebugN(t1);
+     dpGet(chClicked+\".actual.vMon\",vVal);
+     //while(vVal
+     eTime=0;
+     while(vVal<=0.98*val || eTime < (gTime+hTime))
+     {
+       dpGet(chClicked+\".actual.vMon\",vVal);
+        t2=getCurrentTime();
+        t=t2-t1;
+        mint=minute(t);
+        secs=second(t);
+        eTime=(60*mint)+secs;    //time elapsed in seconds
+        //DebugN(eTime);
+      }
+     //DebugN(eTime);
+     scnTable.appendLine(\"scnV\",\"\");
+     scnTable.appendLine(\"scnC1\",\"\");
+     dpGet(chClicked+\".actual.vMon\",vVal);
+     dpGet(chClicked+\".actual.iMon\",iVal);
+     setValue(\"scnTable\",\"cellValueRC\",i,\"scnV\",vVal);
+     setValue(\"scnTable\",\"cellValueRC\",i,\"scnC1\",iVal);
+   
+    }
+   }
+  if(swopt)  
+   dpSet(chClicked+\".settings.onOff\",0);
+  pbScan.enabled=true;
+  pbStop.enabled=false;
+}" 0
+ E E E
+25 8
+"scnTable"
+""
+1 365 92 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+0  363 90 555 385
+EE 1 0 1 2 0 "scnV" 6 1 0 "[0s,,,ALIGNMENT_CENTER]" 2
+LANG:10001 7 Voltage
+LANG:1 7 Voltage
+E
+2
+LANG:10001 0 
+LANG:1 0 
+
+80 "scnC1" 8 1 0 "[0s,,,ALIGNMENT_CENTER]" 2
+LANG:10001 7 Current
+LANG:1 7 Current
+E
+2
+LANG:10001 0 
+LANG:1 0 
+
+100 
+25 25 10 0
+2
+LANG:10001 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+0 0 1 1 1 7
+1 0
+13 9
+"pbStop"
+""
+1 191.25 441 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+0  189.25 426 289.25 470
+
+T 
+2
+LANG:10001 4 Stop
+LANG:1 4 Stop
+"main(mapping event)
+{
+  dpSet(chClicked+\".settings.onOff\",0);  
+  ScanState=false;
+  pbScan.enabled=true;
+  pbStop.enabled=false;
+}" 0
+ E E E
+14 10
+"vhold"
+""
+1 141.625 312.5652173913043 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,13,5,50,0,0,0,0,0
+0  139.625 297.0000000000001 242.625 340.0000000000001
+3 "5d" 5 0 0 0 0 -1  E E E
+2 11
+"PRIMITIVE_TEXT4"
+""
+1 27 98 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.408504787380316 0 0.7142857142857143 -13.3105266118347 239.4285714285714 0 E 27 98 108 136
+0 2 2 "0s" 0 0 0 65 0 0  27 98 1
+2
+LANG:10001 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+0 2
+LANG:10001 10 Hold Time:
+LANG:1 10 Hold Time:
+2 15
+"PRIMITIVE_TEXT5"
+""
+1 128 15 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 128 15 667 66
+0 2 2 "0s" 0 0 0 65 0 0  128 15 1
+2
+LANG:10001 34 MS Sans Serif,-1,33,5,75,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,33,5,75,0,0,0,0,0
+0 2
+LANG:10001 12 Channel Scan
+LANG:1 12 Channel Scan
+20 16
+"scopt1"
+""
+1 125.9374999999999 373 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  123.9374999999999 371 267.9374999999999 395
+1
+T 
+1
+LANG:10001 21 Switch Off after Scan
+
+0 
+1
+LANG:10001 0 
+E E
+0 0 0 0 0
+0
+E"main(int button, int state)
+{
+  swopt=state;
+}" 0
+0
+LAYER, 1 
+1
+LANG:10001 0 
+0
+LAYER, 2 
+1
+LANG:10001 0 
+0
+LAYER, 3 
+1
+LANG:10001 0 
+0
+LAYER, 4 
+1
+LANG:10001 0 
+0
+LAYER, 5 
+1
+LANG:10001 0 
+0
+LAYER, 6 
+1
+LANG:10001 0 
+0
+LAYER, 7 
+1
+LANG:10001 0 
+0
+0

@@ -1,0 +1,228 @@
+V 14
+2
+LANG:10001 5 Almpn
+LANG:1 5 Almpn
+PANEL,-1 -1 560 321 N "_3DFace" 1
+"$ChNo"
+"main()
+{
+  string AlStatus,Aldp,Altime;
+  //AlStatus=$ALS;
+  Aldp=$ChNo;
+  
+  dpGet(Aldp,AlStatus);
+  //System1:CAEN/System904/board04/channel003.actual.status
+  //strreplace(Aldp,\"status:_online.._value\",\"status:_online.._\"); 
+  DebugN(\"Alarm=\"+Aldp);
+  DebugN(\"Alarm=\"+Aldp,AlStatus);
+  dpGet(Aldp+\":_online.._stime\",Altime);
+  Al_Msg.color=\"FwStateAttention3\";  
+  switch(AlStatus)
+   {
+      
+     case 0:                
+       Al_Msg.color =\"FwStateOKNotPhysics\";
+       Al_Msg.text=\"Channel Off\";
+        break;     
+     case 1:
+        Al_Msg.color =\"FwStateOKPhysics\";
+       Al_Msg.text=\"Channel ON\";
+       break;     
+     case 3:
+        Al_Msg.color=\"FwStateAttention1\"; 
+        Al_Msg.text=\"Ramping Up\";
+       break;
+      case 5:
+        Al_Msg.color=\"FwStateAttention1\";       
+        Al_Msg.text=\"Ramping Down\";
+       break;
+      case 8:
+      case 9:                
+        Al_Msg.text=\"Over Current\";
+        //Al_Time.text=Altime;
+       break;
+      case 17:                
+        Al_Msg.text=\"Over Voltage\";
+       break;
+      case 33:                
+        Al_Msg.text=\"Under Voltage\";
+       break;
+      case 65:                
+        Al_Msg.text=\"Other Conditions\";
+       break;
+       case 512:                
+        Al_Msg.text=\"Channel Trip\";
+       break;
+     }
+    Al_Time.text=Altime;
+  
+}" 0
+ E E E E 1 -1 -1 0  100 164
+""0  1
+E E 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:10001 0 
+2 16
+"PRIMITIVE_TEXT1"
+""
+1 27 116 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 27 116 103 148
+0 2 2 "0s" 0 0 0 65 0 0  27 116 1
+2
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:10001 7 STATUS:
+LANG:1 7 STATUS:
+2 17
+"PRIMITIVE_TEXT2"
+""
+1 34 184 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 34 184 98 220
+0 2 2 "0s" 0 0 0 65 0 0  34 184 1
+2
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:10001 5 Time:
+LANG:1 5 Time:
+13 18
+"Al_Ok"
+""
+1 214 256 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+0  212 241 360 289
+
+T 
+2
+LANG:10001 2 OK
+LANG:1 2 OK
+"main()
+{
+  //sdClosePopup(\"1\",\"\",\"\");
+  PanelOffPanel(\"ALPN\");
+}" 0
+ E E E
+2 19
+"Al_Msg"
+""
+1 114 112 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 114 112 476 148
+0 2 2 "0s" 0 0 0 64 0 0  114 112 1
+2
+LANG:10001 34 MS Sans Serif,-1,20,5,75,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,20,5,75,0,0,0,0,0
+0 2
+LANG:10001 10 AL Message
+LANG:1 10 AL Message
+2 20
+"Al_Time"
+""
+1 114 177 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 114 177 479 220
+0 2 2 "0s" 0 0 0 64 0 0  114 177 1
+2
+LANG:10001 34 MS Sans Serif,-1,20,5,75,0,0,0,0,0
+LANG:1 34 MS Sans Serif,-1,20,5,75,0,0,0,0,0
+0 2
+LANG:10001 7 Al Time
+LANG:1 7 Al Time
+0
+LAYER, 1 
+1
+LANG:10001 0 
+0
+LAYER, 2 
+1
+LANG:10001 0 
+0
+LAYER, 3 
+1
+LANG:10001 0 
+0
+LAYER, 4 
+1
+LANG:10001 0 
+0
+LAYER, 5 
+1
+LANG:10001 0 
+0
+LAYER, 6 
+1
+LANG:10001 0 
+0
+LAYER, 7 
+1
+LANG:10001 0 
+0
+0

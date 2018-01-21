@@ -1,0 +1,238 @@
+V 14
+2
+LANG:10001 0 
+LANG:1 0 
+PANEL,-1 -1 1560 700 N "_3DFace" 0
+"main()
+{
+  //setDollarParams(SC1,$SC_Number,6);
+  string sys;
+  dyn_string lvchannels;
+  bool pcst;
+  sys=getSystemName();
+  lvchannels=dpNames(sys+\"CAEN*LV*easyBoard*.settings.onOff:_lock._original._locked\",\"FwCaenChannel\");
+  dpConnect(\"ChLockMsg\",FALSE,lvchannels);
+            
+}
+//dpSet(Channel_No1+\".settings.onOff:_lock._original._locked\",1);" 0
+ E E E E 1 -1 -1 0  0 0
+""0  1
+E "ChLockMsg(dyn_string lvc,dyn_string lvcv)
+ {
+  string msg,sys,ch;  
+ string ms1,ms2,gm; 
+  
+    bool sts;
+    
+    
+   
+   msg=\"*** INFO -\";  
+   msg=getCurrentTime();
+   dpSet(sys+\"fwCU_GEM_ENDCAP_Minus.message\",msg);
+   msg=\"*** INFO -\";  
+   msg=msg+\"Locked status  changed for atleast one channel \"+ms1;
+   dpSet(sys+\"fwCU_GEM_ENDCAP_Minus.message\",msg);
+   
+  for(int i=1;i<=dynlen(lvc);i++)
+  {
+    ch=lvc[i];
+    strreplace(ch,\"locked\",\"\");
+    dpGet(ch+\"locked\",sts);
+    dpGet(ch+\"user_id\",ms1);
+    if(0<i<4)
+        gm=\"GEMINI27 L1\";
+      else if(3<i<7)
+        gm=\"GEMINI27 L2\";
+      else if(6<i<10)
+        gm=\"GEMINI28 L1\";
+      else if(9<i<13)
+        gm=\"GEMINI28 L2\";
+      else if(12<i<16)
+        gm=\"GEMINI29 L1\";
+      else if(15<i<19)
+        gm=\"GEMINI29 L2\";
+      else if(18<i<22)
+        gm=\"GEMINI30 L1\";
+      else if(21<i<25)
+        gm=\"GEMINI30 L2\";
+      else if(24<i<28)
+        gm=\"GEMINI01 L1\";
+      else if(27<i<31)
+        gm=\"GEMINI01 L2\";
+    if(sts)
+    {
+      
+      
+      msg=\"*** INFO -\";  
+      msg=msg+gm+\" locked=\"+sts+\", \"+ms1;
+      dpSet(sys+\"fwCU_GEM_ENDCAP_Minus.message\",msg);
+    }
+    /*else
+     {
+      msg=\"*** INFO -\";  
+      msg=msg+gm+\" locked=\"+sts+\", \"+ms1;
+      dpSet(sys+\"fwCU_GEM_ENDCAP_Minus.message\",msg);
+     }*/
+  }
+}" 0
+ 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:10001 0 
+1 497 0 "" 36
+0
+1 546 1 "" 36
+0
+1 595 2 "" 36
+0
+1 644 3 "" 36
+0
+1 693 4 "" 36
+0
+2 494
+"PRIMITIVE_TEXT30"
+""
+1 44 644 E E E 1 E 1 E N "STD_windows_available" E N "_Window" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 0.7695652173913044 0 0.85 9.678260869565218 102.6 0 E 44 644 500 680
+0 2 2 "0s" 0 0 0 64 0 0  44 644 1
+1
+LANG:10001 35 MS Shell Dlg 2,-1,13,5,50,0,0,0,0,0
+0 1
+LANG:10001 51 For Simple Settings and HV Scan Left Click on Value
+2 495
+"PRIMITIVE_TEXT31"
+""
+1 512 650 E E E 1 E 1 E N "STD_windows_available" E N "_Window" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E U  0 E 512 650 824 690
+0 2 2 "0s" 0 0 0 64 0 0  512 650 1
+1
+LANG:10001 35 MS Shell Dlg 2,-1,13,5,50,0,0,0,0,0
+0 1
+LANG:10001 39 For full Settings  Right Click on Value
+2 496
+"PRIMITIVE_TEXT32"
+""
+1 920 650 E E E 1 E 1 E N "STD_windows_available" E N "_Window" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E U  0 E 920 650 1268 686
+0 2 2 "0s" 0 0 0 64 0 0  920 650 1
+1
+LANG:10001 35 MS Shell Dlg 2,-1,13,5,50,0,0,0,0,0
+0 1
+LANG:10001 36 For Trends Left Click on Value Title
+0
+LAYER, 1 
+1
+LANG:10001 0 
+0
+LAYER, 2 
+1
+LANG:10001 0 
+0
+LAYER, 3 
+1
+LANG:10001 0 
+0
+LAYER, 4 
+1
+LANG:10001 0 
+0
+LAYER, 5 
+1
+LANG:10001 0 
+0
+LAYER, 6 
+1
+LANG:10001 0 
+0
+LAYER, 7 
+1
+LANG:10001 0 
+0
+3 0 "panel27" -1
+"layoutAlignment" "AlignCenter"
+"" ""
+"CMS_GEM_CAEN/GEM_Slice.pnl" 192 87.33333332836628 T 24 1 0 1 -182 -67.33333332836628
+4
+"$SC_HV_Address1""CAEN/GEM_CAEN_HV/board02/channel000"
+"$SC_HV_Address2""CAEN/GEM_CAEN_HV/board02/channel001"
+"$SC_LV_Address""CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard01/channel000"
+"$SC_Number""27"
+3 1 "panel28" -1
+"layoutAlignment" "AlignCenter"
+"" ""
+"CMS_GEM_CAEN/GEM_Slice.pnl" 560.6500000000001 88.98958337292163 T 25 1 0 1 -250.6500000000001 -68.98958337292163
+4
+"$SC_HV_Address1""CAEN/GEM_CAEN_HV/board02/channel002"
+"$SC_HV_Address2""CAEN/GEM_CAEN_HV/board02/channel003"
+"$SC_LV_Address""CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard05/channel000"
+"$SC_Number""28"
+3 2 "panel29" -1
+"layoutAlignment" "AlignCenter"
+"" ""
+"CMS_GEM_CAEN/GEM_Slice.pnl" 923 88.93749332427979 T 26 1 0 0.9994918268960956 -313.0000000000002 -68.89229768224371
+4
+"$SC_HV_Address1""CAEN/GEM_CAEN_HV/board02/channel004"
+"$SC_HV_Address2""CAEN/GEM_CAEN_HV/board02/channel005"
+"$SC_LV_Address""CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard09/channel000"
+"$SC_Number""29"
+3 3 "panel30" -1
+"layoutAlignment" "AlignCenter"
+"" ""
+"CMS_GEM_CAEN/GEM_Slice.pnl" 1284 88.99214477539056 T 27 1 0 1 -374 -68.99214477539056
+4
+"$SC_HV_Address1""CAEN/GEM_CAEN_HV/board04/channel000"
+"$SC_HV_Address2""CAEN/GEM_CAEN_HV/board04/channel001"
+"$SC_LV_Address""CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard13/channel000"
+"$SC_Number""30"
+3 4 "panel5" -1
+"layoutAlignment" "AlignCenter"
+"" ""
+"CMS_GEM_CAEN/GEM_Slice.pnl" 1194 31.86974092842888 T 27 1 0 1 16 -11.86974092842888
+4
+"$SC_HV_Address1""MC_SC1top_overview"
+"$SC_HV_Address2""MC_SC1bot_overview"
+"$SC_LV_Address""CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard17/channel000"
+"$SC_Number""01"
+0

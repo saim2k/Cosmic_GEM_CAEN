@@ -1,0 +1,2571 @@
+<?xml version="1.0" encoding="us-ascii"?> 
+<elements> 
+<fsmnodes> 
+<fsmnode cu="1" visible="1" control="1" userLabel="GEM_COSMIC" customPanel="Cosmic_GEM_CAEN/fwGEM_CosmicMain.pnl">
+   <parentNode>FSM</parentNode>
+   <node>GEM_COSMIC</node>
+   <device>GEM_COSMIC</device>
+   <type>Gemini</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="Hardware_View" customPanel="">
+   <parentNode>GEM_COSMIC</parentNode>
+   <node>Hardware_View</node>
+   <device>Hardware_View</device>
+   <type>HV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="PMT" customPanel="">
+   <parentNode>Hardware_View</parentNode>
+   <node>PMT</node>
+   <device>PMT</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT00" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT00</node>
+   <device>GEM_HV/GEM_PMT/PMT00</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT01" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT01</node>
+   <device>GEM_HV/GEM_PMT/PMT01</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT02" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT02</node>
+   <device>GEM_HV/GEM_PMT/PMT02</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT03" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT03</node>
+   <device>GEM_HV/GEM_PMT/PMT03</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT04" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT04</node>
+   <device>GEM_HV/GEM_PMT/PMT04</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT05" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT05</node>
+   <device>GEM_HV/GEM_PMT/PMT05</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT06" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT06</node>
+   <device>GEM_HV/GEM_PMT/PMT06</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT07" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT07</node>
+   <device>GEM_HV/GEM_PMT/PMT07</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT08" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT08</node>
+   <device>GEM_HV/GEM_PMT/PMT08</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="PMT09" customPanel="">
+   <parentNode>PMT</parentNode>
+   <node>GEM_HV/GEM_PMT/PMT09</node>
+   <device>GEM_HV/GEM_PMT/PMT09</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEM_HV" customPanel="">
+   <parentNode>Hardware_View</parentNode>
+   <node>GEM_HV</node>
+   <device>GEM_HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM00" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM00</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM00</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM01" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM01</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM01</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM02" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM02</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM02</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM03" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM03</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM03</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM04" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM04</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM04</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM05" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM05</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM05</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM06" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM06</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM06</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM07" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM07</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM07</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM08" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM08</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM08</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM09" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM09</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM09</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM10" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM10</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM10</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM11" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM11</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM11</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM12" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM12</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM12</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM13" customPanel="">
+   <parentNode>GEM_HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM13</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM13</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEM_LV" customPanel="">
+   <parentNode>Hardware_View</parentNode>
+   <node>GEM_LV</node>
+   <device>GEM_LV</device>
+   <type>LV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V00" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V00</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V00</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V01" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V01</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V01</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V02" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V02</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V02</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V03" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V03</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V03</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V04" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V04</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V04</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V05" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V05</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V05</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V06" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V06</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V06</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V07" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V07</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V07</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V08" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V08</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V08</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V09" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V09</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V09</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V00" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V00</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V00</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V01" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V01</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V01</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V02" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V02</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V02</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V03" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V03</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V03</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V04" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V04</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V04</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V05" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V05</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V05</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V06" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V06</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V06</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V07" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V07</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V07</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V08" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V08</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V08</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V09" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V09</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V09</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT00" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT00</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT00</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT01" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT01</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT01</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT02" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT02</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT02</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT03" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT03</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT03</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT04" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT04</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT04</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT05" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT05</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT05</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT06" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT06</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT06</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT07" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT07</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT07</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT08" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT08</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT08</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT09" customPanel="">
+   <parentNode>GEM_LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT09</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT09</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="Logical_View" customPanel="">
+   <parentNode>GEM_COSMIC</parentNode>
+   <node>Logical_View</node>
+   <device>Logical_View</device>
+   <type>Gemini</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI01" customPanel="">
+   <parentNode>Logical_View</parentNode>
+   <node>GEMINI01</node>
+   <device>GEMINI01</device>
+   <type>Gemini</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI01_LAYER1" customPanel="">
+   <parentNode>GEMINI01</parentNode>
+   <node>GEMINI01_LAYER1</node>
+   <device>GEMINI01_LAYER1</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI01_LAYER1</parentNode>
+   <node>LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V00" customPanel="Cosmic_GEM_CAEN/FwCaenChannelBasic.pnl">
+   <parentNode>LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V00</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V00</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V00" customPanel="">
+   <parentNode>LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V00</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V00</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT00" customPanel="">
+   <parentNode>LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT00</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT00</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI01_LAYER1</parentNode>
+   <node>HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM00" customPanel="">
+   <parentNode>HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM00</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM00</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI01_LAYER2" customPanel="">
+   <parentNode>GEMINI01</parentNode>
+   <node>GEMINI01_LAYER2</node>
+   <device>GEMINI01_LAYER2</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI01_LAYER2</parentNode>
+   <node>LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V01" customPanel="">
+   <parentNode>LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V01</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V01</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V01" customPanel="">
+   <parentNode>LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V01</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V01</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT01" customPanel="">
+   <parentNode>LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT01</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT01</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI01_LAYER2</parentNode>
+   <node>HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM01" customPanel="">
+   <parentNode>HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM01</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM01</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI02" customPanel="">
+   <parentNode>Logical_View</parentNode>
+   <node>GEMINI02</node>
+   <device>GEMINI02</device>
+   <type>Gemini</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI02_LAYER1" customPanel="">
+   <parentNode>GEMINI02</parentNode>
+   <node>GEMINI02_LAYER1</node>
+   <device>GEMINI02_LAYER1</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI02_LAYER1</parentNode>
+   <node>&0002LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V02" customPanel="">
+   <parentNode>&0002LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V02</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V02</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V02" customPanel="">
+   <parentNode>&0002LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V02</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V02</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT02" customPanel="">
+   <parentNode>&0002LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT02</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT02</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI02_LAYER1</parentNode>
+   <node>&0002HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM02" customPanel="">
+   <parentNode>&0002HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM02</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM02</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI02_LAYER2" customPanel="">
+   <parentNode>GEMINI02</parentNode>
+   <node>GEMINI02_LAYER2</node>
+   <device>GEMINI02_LAYER2</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI02_LAYER2</parentNode>
+   <node>&0003LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V03" customPanel="">
+   <parentNode>&0003LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V03</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V03</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V03" customPanel="">
+   <parentNode>&0003LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V03</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V03</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT03" customPanel="">
+   <parentNode>&0003LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT03</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT03</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI02_LAYER2</parentNode>
+   <node>&0003HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM03" customPanel="">
+   <parentNode>&0003HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM03</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM03</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI03" customPanel="">
+   <parentNode>Logical_View</parentNode>
+   <node>GEMINI03</node>
+   <device>GEMINI03</device>
+   <type>Gemini</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI03_LAYER1" customPanel="">
+   <parentNode>GEMINI03</parentNode>
+   <node>GEMINI03_LAYER1</node>
+   <device>GEMINI03_LAYER1</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI03_LAYER1</parentNode>
+   <node>&0004LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V04" customPanel="">
+   <parentNode>&0004LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V04</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V04</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V04" customPanel="">
+   <parentNode>&0004LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V04</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V04</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT04" customPanel="">
+   <parentNode>&0004LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT04</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT04</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI03_LAYER1</parentNode>
+   <node>&0004HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM04" customPanel="">
+   <parentNode>&0004HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM04</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM04</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI03_LAYER2" customPanel="">
+   <parentNode>GEMINI03</parentNode>
+   <node>GEMINI03_LAYER2</node>
+   <device>GEMINI03_LAYER2</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI03_LAYER2</parentNode>
+   <node>&0005LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V05" customPanel="">
+   <parentNode>&0005LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V05</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V05</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V05" customPanel="">
+   <parentNode>&0005LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V05</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V05</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT05" customPanel="">
+   <parentNode>&0005LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT05</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT05</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI03_LAYER2</parentNode>
+   <node>&0005HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM05" customPanel="">
+   <parentNode>&0005HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM05</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM05</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI04" customPanel="">
+   <parentNode>Logical_View</parentNode>
+   <node>GEMINI04</node>
+   <device>GEMINI04</device>
+   <type>Gemini</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI04_LAYER1" customPanel="">
+   <parentNode>GEMINI04</parentNode>
+   <node>GEMINI04_LAYER1</node>
+   <device>GEMINI04_LAYER1</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI04_LAYER1</parentNode>
+   <node>&0006LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V06" customPanel="">
+   <parentNode>&0006LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V06</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V06</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V06" customPanel="">
+   <parentNode>&0006LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V06</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V06</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT06" customPanel="">
+   <parentNode>&0006LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT06</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT06</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI04_LAYER1</parentNode>
+   <node>&0006HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM06" customPanel="">
+   <parentNode>&0006HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM06</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM06</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI04_LAYER2" customPanel="">
+   <parentNode>GEMINI04</parentNode>
+   <node>GEMINI04_LAYER2</node>
+   <device>GEMINI04_LAYER2</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI04_LAYER2</parentNode>
+   <node>&0007LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V07" customPanel="">
+   <parentNode>&0007LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V07</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V07</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V07" customPanel="">
+   <parentNode>&0007LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V07</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V07</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT07" customPanel="">
+   <parentNode>&0007LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT07</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT07</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI04_LAYER2</parentNode>
+   <node>&0007HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM07" customPanel="">
+   <parentNode>&0007HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM07</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM07</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI05" customPanel="">
+   <parentNode>Logical_View</parentNode>
+   <node>GEMINI05</node>
+   <device>GEMINI05</device>
+   <type>Gemini</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI05_LAYER1" customPanel="">
+   <parentNode>GEMINI05</parentNode>
+   <node>GEMINI05_LAYER1</node>
+   <device>GEMINI05_LAYER1</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI05_LAYER1</parentNode>
+   <node>&0008LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V08" customPanel="">
+   <parentNode>&0008LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V08</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V08</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V08" customPanel="">
+   <parentNode>&0008LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V08</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V08</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT08" customPanel="">
+   <parentNode>&0008LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT08</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT08</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI05_LAYER1</parentNode>
+   <node>&0008HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM08" customPanel="">
+   <parentNode>&0008HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM08</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM08</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+<fsmnode cu="1" visible="1" control="1" userLabel="GEMINI05_LAYER2" customPanel="">
+   <parentNode>GEMINI05</parentNode>
+   <node>GEMINI05_LAYER2</node>
+   <device>GEMINI05_LAYER2</device>
+   <type>GeminiLayer</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="LV" customPanel="">
+   <parentNode>GEMINI05_LAYER2</parentNode>
+   <node>&0009LV</node>
+   <device>LV</device>
+   <type>LV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH2V09" customPanel="">
+   <parentNode>&0009LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH2V09</node>
+   <device>GEM_HV/GEM_Detector_LV/OH2V09</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="OH4V09" customPanel="">
+   <parentNode>&0009LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/OH4V09</node>
+   <device>GEM_HV/GEM_Detector_LV/OH4V09</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="VFAT09" customPanel="">
+   <parentNode>&0009LV</parentNode>
+   <node>GEM_HV/GEM_Detector_LV/VFAT09</node>
+   <device>GEM_HV/GEM_Detector_LV/VFAT09</device>
+   <type>FwCaenChannelLV</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV" customPanel="">
+   <parentNode>GEMINI05_LAYER2</parentNode>
+   <node>&0009HV</node>
+   <device>HV</device>
+   <type>HV1</type>
+</fsmnode>
+<fsmnode cu="0" visible="1" control="1" userLabel="HV_GEM09" customPanel="">
+   <parentNode>&0009HV</parentNode>
+   <node>GEM_HV/GEM_Detector_HV/HV_GEM09</node>
+   <device>GEM_HV/GEM_Detector_HV/HV_GEM09</device>
+   <type>FwCaenChannelHV</type>
+</fsmnode>
+</fsmnodes> 
+<deviceTypes>
+	<type>
+		<typeName>CMSfwFSMConfigurator</typeName>
+		<panel>CMSfwFSMConfigDB/fsmPanel.pnl</panel>
+		<states_dpe>
+			<state_dpe>string state</state_dpe>
+		</states_dpe>
+		<actions_dpe>
+			<action_dpe>string mode</action_dpe>
+			<action_dpe>string state</action_dpe>
+		</actions_dpe>
+		<init_script>CMSfwFSMConfigurator_initialize(string domain, string device)
+{
+}
+</init_script>
+		<state_script>CMSfwFSMConfigurator_valueChanged( string domain, string device,
+      string state, string &amp;fwState )
+{
+  switch(state)
+  {
+    case &quot;LOADED&quot;:
+    case &quot;CONFIGURING&quot;:
+    case &quot;VERIFYING&quot;:
+    case &quot;MODIFIED&quot;:
+      fwState = state;    
+      break;
+    default:
+      fwState = &quot;NOT_READY&quot;;
+      break;
+  }
+}
+
+</state_script>
+		<action_script>CMSfwFSMConfigurator_doCommand(string domain, string device, string command)
+{
+  bool showIntermediateStates;
+  int verifyDelay, verifyRetries;  
+  
+  dpGet(device + &quot;.configuration.verifyDelay&quot;, verifyDelay,
+        device + &quot;.configuration.verifyRetries&quot;, verifyRetries,
+        device + &quot;.configuration.showIntermediateStates&quot;, showIntermediateStates);
+  
+  //calculate a suitable timeout for the DU
+  if(showIntermediateStates)
+    fwDU_startTimeout(10, domain, device, &quot;NOT_READY&quot;);
+  else
+    fwDU_startTimeout((verifyDelay*verifyRetries) + 10, domain, device, &quot;NOT_READY&quot;);
+  
+	if (command == &quot;LOAD&quot;)
+	{
+		anytype valueOf_mode;
+		fwDU_getCommandParameter(domain, device, &quot;mode&quot;, valueOf_mode);
+                dpSet(device + &quot;.sendCommand.command&quot;, &quot;LOAD&quot;, 
+                      device + &quot;.sendCommand.parameter&quot;, valueOf_mode); 	
+	}
+	else
+	{
+                dpSet(device + &quot;.sendCommand.command&quot;, command, 
+                      device + &quot;.sendCommand.parameter&quot;, &quot;&quot;);	
+  }
+}
+
+</action_script>
+		<states>
+			<state id="NOT_READY" color="FwStateAttention3">
+				<action id="LOAD"  params="string mode = &quot;default&quot;
+" visible="1"></action>
+			</state>
+			<state id="VERIFYING" color="FwStateOKNotPhysics">
+				<action id="ABORT"  params="" visible="1"></action>
+			</state>
+			<state id="CONFIGURING" color="FwStateAttention1">
+				<action id="ABORT"  params="" visible="1"></action>
+			</state>
+			<state id="LOADED" color="FwStateOKPhysics">
+				<action id="LOAD"  params="string mode = &quot;default&quot;
+" visible="1"></action>
+				<action id="RELOAD"  params="" visible="1"></action>
+				<action id="VERIFY"  params="" visible="1"></action>
+			</state>
+			<state id="MODIFIED" color="FwStateAttention2">
+				<action id="LOAD"  params="string mode = &quot;default&quot;
+" visible="1"></action>
+				<action id="VERIFY"  params="" visible="1"></action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>FwCaenChannelHV</typeName>
+		<panel>FwCaenChannel|FwCaenChannelHV.pnl</panel>
+		<states_dpe>
+			<state_dpe>int actual.status</state_dpe>
+			<state_dpe>float actual.vMon</state_dpe>
+		</states_dpe>
+		<actions_dpe>
+			<action_dpe>bool settings.onOff</action_dpe>
+		</actions_dpe>
+		<init_script>#uses &quot;Cosmic_GEM_CAEN/GEMFSM.ctl&quot;
+FwCaenChannelHV_initialize(string domain, string device)
+{
+}
+</init_script>
+		<state_script>FwCaenChannelHV_valueChanged( string domain, string device,
+      int actual_dot_status,
+      float actual_dot_vMon, string &amp;fwState )
+{
+	if (
+	(actual_dot_status == 1) &amp;&amp;
+	(actual_dot_vMon &gt; 2650) )
+	{
+		fwState = &quot;ON&quot;;
+	}
+	else if (actual_dot_status == 0)
+	{
+		fwState = &quot;OFF&quot;;
+	}
+	else if (
+	(actual_dot_status == 1) &amp;&amp;
+  (actual_dot_vMon &gt; 200)&amp;&amp;
+	(actual_dot_vMon &lt;= 2650) )
+	{
+		fwState = &quot;STANDBY&quot;;
+	}
+	else if (actual_dot_status  == 5)
+	{
+		fwState = &quot;RAMPING_DOWN&quot;;
+	}
+	else if (actual_dot_status == 3)
+	{
+		fwState = &quot;RAMPING_UP&quot;;
+	}
+	else if (    
+	(getBit(actual_dot_status, 3)) ||    //OvC
+	(getBit(actual_dot_status, 4)) ||    //OvV 
+        (getBit(actual_dot_status, 5)) || //UnV    
+        (getBit(actual_dot_status, 12)))  //UnC 
+	{
+		fwState = &quot;WARNING&quot;;
+	}
+	else if ((getBit(actual_dot_status, 8)) ||	(getBit(actual_dot_status, 9)))
+	{
+		fwState = &quot;TRIPPED&quot;;
+	}
+	else 
+	{
+		fwState = &quot;ERROR&quot;;
+	}
+
+}
+
+</state_script>
+		<action_script>FwCaenChannelHV_doCommand(string domain, string device, string command)
+{
+	
+      int onoff,OnType;  
+      //dyn_string exceptionInfo;
+      //dyn_string deviceList;
+      //dyn_dyn_mixed recipeObject;
+      //dyn_string exceptionInfo;
+      int value; 
+      string status;
+   string sys; 
+   sys=getSystemName();
+  uint rcpMode;
+  bool RcpOK=TRUE;  
+ dpGet(sys+&quot;GL1.GEMCAEN.Beam.RcpMode&quot;,rcpMode);  
+  if (command == &quot;SWITCH_OFF&quot;)  
+	{
+                
+       dpGet(device+&quot;.actual.isOn&quot;,onoff);
+       if(onoff==1)
+       dpSet(device+&quot;.settings.onOff:_original.._value&quot;,0);
+       fwDU_getState(domain,device,status);
+       fwDU_setState(domain,device,status);
+       
+   }  
+	if (command == &quot;SWITCH_ON&quot;)    
+	{    
+     if(rcpMode!=1)        //Mode 2 to is Standby and all Hardware contains Stby settings so needs to update to ON settings
+     {
+      RcpOK=ChangeBMHV();
+      rcpMode=1;
+      dpSet(sys+&quot;GL1.GEMCAEN.Beam.RcpMode&quot;,rcpMode);  
+      DebugN(&quot;In Function App ON Rcp&quot;);
+     }      
+      if(RcpOK)
+      {
+       SwitchOn(device);
+       status=&quot;ON&quot;;
+      }
+      else
+      {
+       fwDU_getState(domain,device,status);
+      }
+      fwDU_setState(domain,device,status);      
+          
+  }
+      
+  if (command == &quot;GO_TO_STANDBY&quot;)    
+	 {
+     //dyn_string dpe1,dpe2;
+     
+     if(rcpMode!=2)        //Mode 1 to is ON and all Hardware contains On mode settings (cosmic or Physics)
+     {
+      RcpOK=ApplyStbRcp();
+      rcpMode=2; 
+      dpSet(sys+&quot;GL1.GEMCAEN.Beam.RcpMode&quot;,rcpMode);       
+      DebugN(&quot;In Function App stb Rcp&quot;);
+     }
+     if(RcpOK)
+      {
+       SwitchToStby(device);
+       status=&quot;STANDBY&quot;;
+      }
+      else
+      {
+       fwDU_getState(domain,device,status);
+      }
+      fwDU_setState(domain,device,status);
+       //dpGet(sys+&quot;GL1.GEMCAEN.Beam.RcpAction&quot;,rcpAction); 
+      // dpSet(sys+&quot;GL1.GEMCAEN.Beam.StandBy&quot;,true);
+     
+    }
+}
+
+</action_script>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+				<action id="SWITCH_ON"  params="" visible="1"></action>
+				<action id="GO_TO_STANDBY"  params="" visible="1"></action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+				<action id="GO_TO_STANDBY"  params="" visible="1"></action>
+			</state>
+			<state id="STANDBY" color="FwStateOKPhysics">
+				<action id="SWITCH_ON"  params="" visible="1"></action>
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+				<action id="GO_TO_STANDBY"  params="" visible="1"></action>
+			</state>
+			<state id="RAMPING_UP" color="FwStateAttention1">
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+				<action id="GO_TO_STANDBY"  params="" visible="1"></action>
+			</state>
+			<state id="RAMPING_DOWN" color="FwStateAttention1">
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+				<action id="GO_TO_STANDBY"  params="" visible="1"></action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<action id="SWITCH_OFF"  params="" visible="0"></action>
+				<action id="GO_TO_STANDBY"  params="" visible="1"></action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention3">
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>FwCaenChannelLV</typeName>
+		<panel>FwCaenChannel|FwCaenChannelLV.pnl</panel>
+		<states_dpe>
+			<state_dpe>int actual.status</state_dpe>
+		</states_dpe>
+		<actions_dpe>
+			<action_dpe>bool settings.onOff</action_dpe>
+		</actions_dpe>
+		<init_script>#uses &quot;Cosmic_GEM_CAEN/GEMFSM.ctl&quot;
+FwCaenChannelLV_initialize(string domain, string device)
+{
+}
+</init_script>
+		<state_script>FwCaenChannelLV_valueChanged( string domain, string device,
+      int actual_dot_status, string &amp;fwState )
+{
+	if(actual_dot_status==0)   
+	{   
+		fwState = &quot;OFF&quot;;    
+	}   
+	else if (actual_dot_status==1)
+  {
+      
+       fwState = &quot;ON&quot;;
+       //fwDU_setParameter(domain,device,&quot;enabled&quot;,1);
+  } 
+  else if((getBit(actual_dot_status, 8)) ||      
+	(getBit(actual_dot_status, 9)))   
+	{     
+		fwState = &quot;TRIPPED&quot;;     
+	}    
+	else if (    
+	(getBit(actual_dot_status, 3)) ||    
+	(getBit(actual_dot_status, 4)) ||     
+        (getBit(actual_dot_status, 5)) ||     
+        (getBit(actual_dot_status, 12)))    
+	 {    
+		  fwState = &quot;WARNING&quot;;
+ 	 }    
+	else    
+	{    
+	  fwState = &quot;ERROR&quot;;    
+	} 
+}
+
+</state_script>
+		<action_script>FwCaenChannelLV_doCommand(string domain, string device, string command)
+{
+	if (command == &quot;SWITCH_OFF&quot;)
+	{
+		dpSet(device+&quot;.settings.onOff&quot;,0);
+	}
+	if (command == &quot;SWITCH_ON&quot;)
+	{
+		SwitchOn(device);
+	}
+	if (command == &quot;GO_TO_STANDBY&quot;)
+	{
+		SwitchOn(device);
+	}
+}
+
+</action_script>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+				<action id="SWITCH_ON"  params="" visible="1"></action>
+				<action id="GO_TO_STANDBY"  params="" visible="0"></action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<action id="SWITCH_ON"  params="" visible="1"></action>
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+				<action id="GO_TO_STANDBY"  params="" visible="0"></action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<action id="SWITCH_OFF"  params="" visible="0"></action>
+				<action id="GO_TO_STANDBY"  params="" visible="1"></action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention3">
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<action id="SWITCH_OFF"  params="" visible="1"></action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>FwCaenChannelPMT</typeName>
+		<panel>FwCaenChannel|</panel>
+		<states_dpe>
+			<state_dpe>something</state_dpe>
+		</states_dpe>
+		<actions_dpe>
+		</actions_dpe>
+		<init_script></init_script>
+		<state_script></state_script>
+		<action_script></action_script>
+		<states>
+		</states>
+	</type>
+	<type>
+		<typeName>FwFSMConfDBDUT</typeName>
+		<panel>FwFSMConfDB|FwFSMConfDBDUT.pnl</panel>
+		<states_dpe>
+			<state_dpe>int status</state_dpe>
+		</states_dpe>
+		<actions_dpe>
+			<action_dpe>int command</action_dpe>
+		</actions_dpe>
+		<init_script>FwFSMConfDBDUT_initialize(string domain, string device) 
+{     
+ fwFSMConfDB_DUTinitialize(domain, device);    
+} 
+
+</init_script>
+		<state_script>FwFSMConfDBDUT_valueChanged( string domain, string device, 
+      int status, string &amp;fwState ) 
+{
+fwFSMConfDB_DUTvalueChanged(domain, device, status, fwState);
+} 
+</state_script>
+		<action_script>FwFSMConfDBDUT_doCommand(string domain, string device, string command)  
+{   
+ fwFSMConfDB_DUTdoCommand(domain, device, command);  
+}  
+ 
+</action_script>
+		<states>
+			<state id="NOT_READY" color="FwStateOKNotPhysics">
+				<action id="LOAD"  params="string sMode = &quot;PHYSICS&quot;
+" visible="1"></action>
+			</state>
+			<state id="READY" color="FwStateOKPhysics">
+				<action id="APPLY_RECIPE"  params="" visible="0"></action>
+				<action id="LOAD"  params="string sMode = &quot;PHYSICS&quot;
+" visible="1"></action>
+				<action id="UNLOAD"  params="" visible="1"></action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<action id="RECOVER"  params="" visible="1"></action>
+			</state>
+		</states>
+	</type>
+</deviceTypes>
+<logicalUnitTypes>
+	<type>
+		<typeName>GEMTOP</typeName>
+		<panel>GEMTOP.pnl</panel>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<when>when ( ( $ANY$FwCHILDREN in_state ERROR ) or
+( $ANY$GS in_state NOT_RUNNING ) )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state STANDBY )  move_to STANDBY
+</when>
+				<action id="OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+				<action id="STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<when>when ( ( $ANY$FwCHILDREN in_state ERROR ) or
+( $ANY$GS in_state NOT_RUNNING ) )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$GEM_HV in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$GEM_HV in_state ON ) )  move_to ON
+</when>
+				<action id="OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_UP" color="FwStateAttention1">
+				<when>when ( ( $ANY$FwCHILDREN in_state ERROR ) or
+( $ANY$GS in_state NOT_RUNNING ) )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$GEM_HV not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$GEM_HV not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$GEM_HV not_in_state RAMPING_UP ) and
+( $ANY$GEM_HV in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$GEM_HV not_in_state RAMPING_UP ) and
+( $ANY$GEM_HV in_state ON ) )  move_to ON
+</when>
+				<action id="OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_DOWN" color="FwStateAttention1">
+				<when>when ( ( $ANY$FwCHILDREN in_state ERROR ) or
+( $ANY$GS in_state NOT_RUNNING ) )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$GEM_HV not_in_state RAMPING_DOWN) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$GEM_HV not_in_state RAMPING_DOWN ) and
+( $ANY$GEM_HV in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$GEM_HV not_in_state RAMPING_DOWN ) and
+( $ANY$GEM_HV in_state ON ) )  move_to ON
+</when>
+				<action id="OFF"  params="" visible="0">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="STANDBY" color="FwStateOKNotPhysics">
+				<when>when ( ( $ANY$FwCHILDREN in_state ERROR ) or
+( $ANY$GS in_state NOT_RUNNING ) )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state STANDBY ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+				<action id="STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention2">
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<when>when ( ( $ALL$FwCHILDREN not_in_state {ERROR,NOT_RUNNING} ) and
+( $ANY$FwCHILDREN in_state TRIPPED ) )  do NOTHING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state {ERROR,NOT_RUNNING} ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state {ERROR,NOT_RUNNING} ) and
+( $ALL$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state {ERROR,NOT_RUNNING} ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state {ERROR,NOT_RUNNING} ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state {ERROR,NOT_RUNNING} ) and
+( $ANY$GEM_HV in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state {ERROR,NOT_RUNNING} ) and
+( $ANY$GEM_HV in_state ON ) )  move_to ON
+</when>
+				<action id="OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<when>when ( ( $ANY$FwCHILDREN in_state ERROR ) or
+( $ANY$GS in_state NOT_RUNNING ) )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to ERROR
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$GEM_HV in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$GEM_HV in_state ON ) )  move_to ON
+</when>
+				<action id="OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+				<action id="STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>Gemini</typeName>
+		<panel>Gemini.pnl</panel>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state STANDBY )  move_to STANDBY
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_UP" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_DOWN" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="STANDBY" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state STANDBY ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state TRIPPED ) )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention3">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>GeminiLayer</typeName>
+		<panel>GeminiLayer.pnl</panel>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state STANDBY )  move_to STANDBY
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_UP" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_DOWN" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="STANDBY" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state STANDBY ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state TRIPPED ) )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention3">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>HV</typeName>
+		<panel>HV.pnl</panel>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state STANDBY )  move_to STANDBY
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_UP" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_DOWN" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="STANDBY" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state STANDBY ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state TRIPPED ) )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention3">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>HV1</typeName>
+		<panel>HV1.pnl</panel>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state STANDBY )  move_to STANDBY
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_UP" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_DOWN" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="STANDBY" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state STANDBY ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state TRIPPED ) )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention3">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>LV</typeName>
+		<panel>LV.pnl</panel>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN</action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN</action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state TRIPPED ) )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention3">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN</action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN</action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>LV1</typeName>
+		<panel>LV1.pnl</panel>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN</action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN</action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state TRIPPED ) )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention3">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN</action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN</action>
+			</state>
+		</states>
+	</type>
+	<type>
+		<typeName>PMT</typeName>
+		<panel>PMT.pnl</panel>
+		<states>
+			<state id="ON" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state STANDBY )  move_to STANDBY
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="OFF" color="FwStateOKNotPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state OFF ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_UP" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_UP ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="RAMPING_DOWN" color="FwStateAttention1">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state RAMPING_DOWN ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="STANDBY" color="FwStateOKPhysics">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state WARNING )  move_to WARNING
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_UP )  move_to RAMPING_UP
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state RAMPING_DOWN )  move_to RAMPING_DOWN
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state OFF )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state STANDBY ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="1">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="ERROR" color="FwStateAttention3">
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state TRIPPED ) )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state ERROR ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="TRIPPED" color="FwStateAttention3">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state WARNING ) )  move_to WARNING
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state TRIPPED ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="0">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+			<state id="WARNING" color="FwStateAttention2">
+				<when>when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+</when>
+				<when>when ( $ANY$FwCHILDREN in_state TRIPPED )  move_to TRIPPED
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_UP ) )  move_to RAMPING_UP
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state RAMPING_DOWN ) )  move_to RAMPING_DOWN
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state OFF ) )  move_to OFF
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state STANDBY ) )  move_to STANDBY
+</when>
+				<when>when ( ( $ALL$FwCHILDREN not_in_state WARNING ) and
+( $ANY$FwCHILDREN in_state ON ) )  move_to ON
+</when>
+				<action id="SWITCH_OFF"  params="" visible="1">do SWITCH_OFF $ALL$FwCHILDREN
+</action>
+				<action id="GO_TO_STANDBY"  params="" visible="1">do GO_TO_STANDBY $ALL$FwCHILDREN
+</action>
+				<action id="SWITCH_ON"  params="" visible="0">do SWITCH_ON $ALL$FwCHILDREN
+</action>
+			</state>
+		</states>
+	</type>
+</logicalUnitTypes>
+</elements> 

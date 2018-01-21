@@ -1,0 +1,1445 @@
+V 14
+2
+LANG:1 0 
+LANG:10001 0 
+PANEL,-1 -1 852 556 N "_3DFace" 1
+"$GemNo"
+"main()
+{
+ 
+  string ids=$GemNo;
+  string chtype;
+  dyn_string hvch,dppmt,chs;
+  int id;
+  id=(int)ids;
+  id=2*(id-1);
+  chtype=\"*GEM0\"+id;
+  dpGetAllAliases(hvch,dppmt,chtype);
+  chs[1]=hvch[1]+\"actual.vMon\";
+  chs[2]=hvch[1]+\"actual.iMon\";
+  //VFAT
+  chtype=\"*VFAT0\"+id;
+  dpGetAllAliases(hvch,dppmt,chtype);
+  Channel_No1=hvch[1];
+  //OH2V
+  chtype=\"*OH2V0\"+id;
+  dpGetAllAliases(hvch,dppmt,chtype);
+  Channel_No2=hvch[1];
+  //OH4V
+  chtype=\"*OH4V0\"+id;
+  dpGetAllAliases(hvch,dppmt,chtype);
+  Channel_No3=hvch[1];
+  PopUp1();
+ bool Chlock;
+  dpGet(Channel_No1+\"settings.onOff:_lock._original._locked\",Chlock); 
+   setValue(\"lcVfat\",\"state\",0,Chlock);
+  dpGet(Channel_No2+\"settings.onOff:_lock._original._locked\",Chlock); 
+   setValue(\"lcOH2v\",\"state\",0,Chlock);
+  dpGet(Channel_No3+\"settings.onOff:_lock._original._locked\",Chlock); 
+   setValue(\"lcOH4v\",\"state\",0,Chlock);
+}" 0
+ E E E E 1 -1 -1 0  214 167
+""0  1
+E "// sdOpenPopup(\"\",\"HV_Settings.pnl\",\"Low Voltage Settings\",0,0,0,makeDynString(\"$ChannelClicked:\"+Board_Base));
+string Channel_No1;
+string Channel_No2;
+string Channel_No3;
+string v0,imax,vmax; 
+string rup,rdwn,trpt;
+int Ch_Opt;
+PopUp1()
+{
+  
+    dpGet(Channel_No1+\"readBackSettings.v0\",v0);
+    dpGet(Channel_No1+\"readBackSettings.i0\",imax);
+    dpGet(Channel_No1+\"readBackSettings.vMaxSoftValue\",vmax);
+    dpGet(Channel_No1+\"readBackSettings.tripTime\",trpt);
+    
+    setValue(\"vset1\",\"text\",v0);
+    setValue(\"imax1\",\"text\",imax);
+    setValue(\"vmax1\",\"text\",vmax);
+    setValue(\"Trtp1\",\"text\",trpt);
+    //***********************************************
+    dpGet(Channel_No2+\"readBackSettings.v0\",v0);
+    dpGet(Channel_No2+\"readBackSettings.i0\",imax);
+    dpGet(Channel_No2+\"readBackSettings.vMaxSoftValue\",vmax);
+    dpGet(Channel_No2+\"readBackSettings.tripTime\",trpt);
+    
+    setValue(\"vset2\",\"text\",v0);
+    setValue(\"imax2\",\"text\",imax);
+    setValue(\"vmax2\",\"text\",vmax);
+    setValue(\"Trtp2\",\"text\",trpt);
+    //***************************************************
+    dpGet(Channel_No3+\"readBackSettings.v0\",v0);
+    dpGet(Channel_No3+\"readBackSettings.i0\",imax);
+    dpGet(Channel_No3+\"readBackSettings.vMaxSoftValue\",vmax);
+    dpGet(Channel_No3+\"readBackSettings.tripTime\",trpt);
+    
+    setValue(\"vset3\",\"text\",v0);
+    setValue(\"imax3\",\"text\",imax);
+    setValue(\"vmax3\",\"text\",vmax);
+    setValue(\"Trtp3\",\"text\",trpt);
+}
+UpDateAllVF(int i)
+{
+   //stgopt    
+   switch(i)
+   {
+   case 0: 
+    getValue(\"vset1\",\"text\",v0);
+    getValue(\"imax1\",\"text\",imax);
+    getValue(\"vmax1\",\"text\",vmax);
+    dpSet(Channel_No1+\"settings.v0\",v0);
+    dpSet(Channel_No1+\"settings.i0\",imax);
+    dpSet(Channel_No1+\"settings.vMaxSoftValue\",vmax);
+    getValue(\"Trtp1\",\"text\",trpt);
+    dpSet(Channel_No1+\"settings.tripTime\",trpt);
+    break;
+   case 1:
+    getValue(\"vset1\",\"text\",v0);
+    dpSet(Channel_No1+\"settings.v0\",v0);
+    //Debug(i);
+     break;
+   case 2:
+    getValue(\"imax1\",\"text\",imax);
+    dpSet(Channel_No1+\"settings.i0\",imax);
+     break;
+   case 3:
+     getValue(\"vmax1\",\"text\",vmax);
+     dpSet(Channel_No1+\"settings.vMaxSoftValue\",vmax);
+     //Debug(i);
+      break;
+   case 4:
+    getValue(\"Trtp1\",\"text\",trpt);
+    dpSet(Channel_No1+\"settings.tripTime\",trpt);
+     break;
+   }
+    
+}
+UpDateAllOH1(int i)
+{
+       
+   switch(i)
+   {
+   case 0: 
+    getValue(\"vset2\",\"text\",v0);
+    getValue(\"imax2\",\"text\",imax);
+    getValue(\"vmax2\",\"text\",vmax);
+    dpSet(Channel_No2+\"settings.v0\",v0);
+    dpSet(Channel_No2+\"settings.i0\",imax);
+    dpSet(Channel_No2+\"settings.vMaxSoftValue\",vmax);
+    getValue(\"Trtp2\",\"text\",trpt);
+    dpSet(Channel_No2+\"settings.tripTime\",trpt);
+    break;
+   case 1:
+    getValue(\"vset2\",\"text\",v0);
+    dpSet(Channel_No2+\"settings.v0\",v0);
+    //Debug(i);
+     break;
+   case 2:
+    getValue(\"imax2\",\"text\",imax);
+    dpSet(Channel_No2+\"settings.i0\",imax);
+     break;
+   case 3:
+     getValue(\"vmax2\",\"text\",vmax);
+     dpSet(Channel_No2+\"settings.vMaxSoftValue\",vmax);
+     //Debug(i);
+      break;
+   case 4:
+    getValue(\"Trtp2\",\"text\",trpt);
+    dpSet(Channel_No2+\"settings.tripTime\",trpt);
+     break;
+   }
+    
+}
+UpDateAllOH2(int i)
+{
+       
+   switch(i)
+   {
+   case 0: 
+    getValue(\"vset3\",\"text\",v0);
+    getValue(\"imax3\",\"text\",imax);
+    getValue(\"vmax3\",\"text\",vmax);
+    dpSet(Channel_No3+\"settings.v0\",v0);
+    dpSet(Channel_No3+\"settings.i0\",imax);
+    dpSet(Channel_No3+\"settings.vMaxSoftValue\",vmax);
+    getValue(\"Trtp3\",\"text\",trpt);
+    dpSet(Channel_No3+\"settings.tripTime\",trpt);
+    break;
+   case 1:
+    getValue(\"vset3\",\"text\",v0);
+    dpSet(Channel_No3+\"settings.v0\",v0);
+    //Debug(i);
+     break;
+   case 2:
+    getValue(\"imax3\",\"text\",imax);
+    dpSet(Channel_No3+\"settings.i0\",imax);
+     break;
+   case 3:
+     getValue(\"vmax3\",\"text\",vmax);
+     dpSet(Channel_No3+\"settings.vMaxSoftValue\",vmax);
+     //Debug(i);
+      break;
+   case 4:
+    getValue(\"Trtp3\",\"text\",trpt);
+    dpSet(Channel_No3+\"settings.tripTime\",trpt);
+     break;
+   }
+    
+}
+Set_All()
+{
+  string sys;
+  string chtype=\"*GEM_Detector_LV\";
+  dyn_string lvchannels,dppmt;
+  float len;
+  dpGetAllAliases(lvchannels,dppmt,chtype);
+  len=dynlen(lvchannels);
+  for(int i=1; i<len; i=i+3)
+   {
+    getValue(\"vset1\",\"text\",v0);
+    getValue(\"imax1\",\"text\",imax);
+    getValue(\"vmax1\",\"text\",vmax);
+    getValue(\"Trtp1\",\"text\",trpt);    
+    dpSet(lvchannels[i]+\"settings.v0\",v0);
+    dpSet(lvchannels[i]+\"settings.i0\",imax);
+    dpSet(lvchannels[i]+\"settings.vMaxSoftValue\",vmax);
+    dpSet(lvchannels[i]+\"settings.tripTime\",trpt);
+    
+    getValue(\"vset2\",\"text\",v0);
+    getValue(\"imax2\",\"text\",imax);
+    getValue(\"vmax2\",\"text\",vmax);
+    getValue(\"Trtp2\",\"text\",trpt);    
+    dpSet(lvchannels[i]+\"settings.i0\",imax);
+    dpSet(lvchannels[i]+\"settings.vMaxSoftValue\",vmax);
+    dpSet(lvchannels[i]+\"settings.tripTime\",trpt);
+    
+    getValue(\"vset3\",\"text\",v0);
+    getValue(\"imax3\",\"text\",imax);
+    getValue(\"vmax3\",\"text\",vmax);
+    getValue(\"Trtp3\",\"text\",trpt);    
+    dpSet(lvchannels[i]+\"settings.i0\",imax);
+    dpSet(lvchannels[i]+\"settings.vMaxSoftValue\",vmax);
+    dpSet(lvchannels[i]+\"settings.tripTime\",trpt);
+   }
+  
+}" 0
+ 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:1 0 
+14 8
+"vset1"
+""
+1 133.5000000000001 241.0000000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+6 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  131.5 232 214.5 265
+3 "1.3f" 5 0 0 0 0 -1  E E "main()
+{
+ UpDateAllVF(1);
+}" 0
+
+14 15
+"vmax1"
+""
+1 133.5000000000001 335.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+13 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  131.5 326 214.5 359
+3 "1.3f" 5 0 0 0 0 -1  E E "main()
+{
+ UpDateAllVF(3);
+}" 0
+
+2 16
+"PRIMITIVE_TEXT2"
+""
+1 39.5 238 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 39.5 238 87.5 254
+0 2 2 "0s" 0 0 0 65 0 0  39.5 238 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 5 V Set
+LANG:10001 5 V Set
+2 17
+"PRIMITIVE_TEXT3"
+""
+1 41.00000000000017 335 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 41.00000000000017 335 89.00000000000017 351
+0 2 2 "0s" 0 0 0 65 0 0  41.00000000000017 335 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 5 V Max
+LANG:10001 5 V Max
+14 74
+"imax1"
+""
+1 133.0000000000001 287.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+72 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  131.5 278 214.5 311
+3 "2.3f" 6 0 0 0 0 -1  E E "main()
+{
+ UpDateAllVF(2);
+}" 0
+
+13 81
+"Settings_Ok"
+""
+1 216 -109.4999999999999 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+79 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0  290 11.50000000000011 403 64.50000000000011
+
+T 
+2
+LANG:1 2 OK
+LANG:10001 2 OK
+"//[SCRIPT_WIZARD_GENERATED {invalid}
+//[FUNCTION main
+main()
+{
+ if(Ch_Opt)
+  { 
+  Set_All();
+  }
+ else
+  {  
+   UpDateAllVF(0);
+   UpDateAllOH1(0);
+   UpDateAllOH2(0);
+  }
+  //[CLOSE_POPUP_CODE
+  /*if(oovf!=oo2v && oovf!=oo4v && oo4v!=oo2v)
+  {
+    data1.LV_OnOrder.VF=oovf;
+    data1.LV_OnOrder.OH2V=oo2v;
+    data1.LV_OnOrder.OH4V=oo4v;
+    PanelOffPanel(\"chsettings\");
+  }
+  else
+  {
+    ;
+  }*/
+  
+  //]System1:data1.LV_OnOrder.VF*/
+  PanelOffPanel(\"chsettings\");
+}
+
+" 0
+ E E E
+13 83
+"Settings_Cancel"
+""
+1 463 -179.4999999999999 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+81 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0  433 11.50000000000011 546 64.50000000000011
+
+T 
+2
+LANG:1 6 Cancel
+LANG:10001 6 Cancel
+"//[SCRIPT_WIZARD_GENERATED {invalid}
+//[FUNCTION main
+main()
+{
+  
+  PanelOffPanel(\"chsettings\");
+  //]
+}
+//]
+//]
+" 0
+ E E E
+14 96
+"Trtp1"
+""
+1 133.0000000000001 388.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+94 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  131.5 379 214.5 412
+3 "3.1f" 5 0 0 0 0 -1  E E "main()
+{
+ UpDateAllVF(4);
+}" 0
+
+2 119
+"PRIMITIVE_TEXT38"
+""
+1 25.00000000000017 282.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+117 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 25.00000000000017 282.2500000000001 105.0000000000002 306.2500000000001
+0 2 2 "0s" 0 0 0 65 0 0  25.00000000000017 282.2500000000001 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 9 I Max (A)
+LANG:10001 9 I Max (A)
+2 123
+"PRIMITIVE_TEXT41"
+""
+1 21.5 384 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+121 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 21.5 384 101.5 408
+0 2 2 "0s" 0 0 0 65 0 0  21.5 384 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 9 Trip Time
+LANG:10001 9 Trip Time
+13 125
+"chon"
+""
+1 27.5 490 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+123 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+0  25.5 478 129.5 517
+
+T 
+2
+LANG:1 2 ON
+LANG:10001 2 ON
+"main(mapping event)
+{
+  dpSet(Channel_No1+\".settings.onOff\",1);
+}" 0
+ E E E
+13 126
+"PUSH_BUTTON2"
+""
+1 148.5 490 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+124 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+0  146.5 478 250.5 517
+
+T 
+2
+LANG:1 3 OFF
+LANG:10001 3 OFF
+"main(mapping event)
+{
+  dpSet(Channel_No1+\".settings.onOff\",0);
+}" 0
+ E E E
+2 127
+"PRIMITIVE_TEXT42"
+""
+1 45.125 142 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+125 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1 0 0.4398362171443667 203.875 25.54325716549992 0 E 45.125 142 417.125 205
+0 2 2 "0s" 0 0 0 64 0 0  45.125 142 1
+2
+LANG:1 36 Times New Roman,-1,20,5,75,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,20,5,75,0,0,0,0,0
+0 2
+LANG:1 36           LV Channel Simple Settings
+LANG:10001 36           LV Channel Simple Settings
+2 128
+"PRIMITIVE_TEXT43"
+""
+1 45.125 142 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+126 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1 0 0.4398362171443667 201.75 54.13261127988375 0 E 45.125 142 417.125 205
+0 2 2 "0s" 0 0 0 64 0 0  45.125 142 1
+2
+LANG:1 36 Times New Roman,-1,13,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,13,5,50,0,0,0,0,0
+0 2
+LANG:1 61                    ( For all settings Right-Click on channel)
+LANG:10001 61                    ( For all settings Right-Click on channel)
+30 129
+"FRAME1"
+""
+1 51 116 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+127 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.108108108108108 0 1 -38.01351351351352 82 0 E 51 116 274 455
+2
+LANG:1 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+0 2
+LANG:1 4 VFAT
+LANG:10001 4 VFAT
+30 130
+"FRAME2"
+""
+1 51 116 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+128 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.108108108108108 0 1 241.4864864864865 82 0 E 51 116 274 455
+2
+LANG:1 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+0 2
+LANG:1 4 OH2V
+LANG:10001 4 OH2V
+30 131
+"FRAME3"
+""
+1 51 116 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+129 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.108108108108108 0 1 523.9864864864865 82 0 E 51 116 274 455
+2
+LANG:1 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,75,0,0,0,0,0
+0 2
+LANG:1 4 OH4V
+LANG:10001 4 OH4V
+14 132
+"vset2"
+""
+1 412.0000000000001 243.0000000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+130 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  410 234 493 267
+3 "1.3f" 5 0 0 0 0 -1  E E "main()
+{
+ UpDateAllOH1(1);
+}" 0
+
+14 133
+"vmax2"
+""
+1 412.0000000000001 337.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+131 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  410 328 493 361
+3 "1.3f" 5 0 0 0 0 -1  E E "main()
+{
+ UpDateAllOH1(3);
+}" 0
+
+2 134
+"PRIMITIVE_TEXT44"
+""
+1 318 240.0000000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+132 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 318 240.0000000000001 366 256.0000000000001
+0 2 2 "0s" 0 0 0 65 0 0  318 240.0000000000001 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 5 V Set
+LANG:10001 5 V Set
+2 135
+"PRIMITIVE_TEXT45"
+""
+1 319.5000000000002 337.0000000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+133 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 319.5000000000002 337.0000000000001 367.5000000000002 353.0000000000001
+0 2 2 "0s" 0 0 0 65 0 0  319.5000000000002 337.0000000000001 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 5 V Max
+LANG:10001 5 V Max
+14 136
+"imax2"
+""
+1 411.5000000000001 289.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+134 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  410 280 493 313
+3 "2.3f" 6 0 0 0 0 -1  E E "main()
+{
+ UpDateAllOH1(2);
+}" 0
+
+14 137
+"Trtp2"
+""
+1 411.5000000000001 390.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+135 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  410 381 493 414
+3 "3.1f" 5 0 0 0 0 -1  E E "main()
+{
+ UpDateAllOH1(4);
+}" 0
+
+2 138
+"PRIMITIVE_TEXT46"
+""
+1 303.5000000000002 284.2500000000002 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+136 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 303.5000000000002 284.2500000000002 383.5000000000002 308.2500000000002
+0 2 2 "0s" 0 0 0 65 0 0  303.5000000000002 284.2500000000002 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 9 I Max (A)
+LANG:10001 9 I Max (A)
+2 139
+"PRIMITIVE_TEXT47"
+""
+1 300 386.0000000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+137 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 300 386.0000000000001 380 410.0000000000001
+0 2 2 "0s" 0 0 0 65 0 0  300 386.0000000000001 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 9 Trip Time
+LANG:10001 9 Trip Time
+13 140
+"PUSH_BUTTON3"
+""
+1 306 490 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+138 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+0  304 478 408 517
+
+T 
+2
+LANG:1 2 ON
+LANG:10001 2 ON
+"main(mapping event)
+{
+  dpSet(Channel_No2+\".settings.onOff\",1);
+}" 0
+ E E E
+13 141
+"PUSH_BUTTON4"
+""
+1 427 490 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+139 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+0  425 478 529 517
+
+T 
+2
+LANG:1 3 OFF
+LANG:10001 3 OFF
+"main(mapping event)
+{
+  dpSet(Channel_No2+\".settings.onOff\",0);
+}" 0
+ E E E
+14 142
+"vset3"
+""
+1 695.0000000000001 245.0000000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+140 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  693 236 776 269
+3 "1.3f" 5 0 0 0 0 -1  E E "main()
+{
+ UpDateAllOH2(1);
+}" 0
+
+14 143
+"vmax3"
+""
+1 695.0000000000001 339.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+141 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  693 330 776 363
+3 "1.3f" 5 0 0 0 0 -1  E E "main()
+{
+ UpDateAllOH2(3);
+}" 0
+
+2 144
+"PRIMITIVE_TEXT48"
+""
+1 601 242 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+142 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 601 242 649 258
+0 2 2 "0s" 0 0 0 65 0 0  601 242 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 5 V Set
+LANG:10001 5 V Set
+2 145
+"PRIMITIVE_TEXT49"
+""
+1 602.5000000000002 339 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+143 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 602.5000000000002 339 650.5000000000002 355
+0 2 2 "0s" 0 0 0 65 0 0  602.5000000000002 339 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 5 V Max
+LANG:10001 5 V Max
+14 146
+"imax3"
+""
+1 694.5000000000001 291.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+144 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  693 282 776 315
+3 "2.3f" 6 0 0 0 0 -1  E E "main()
+{
+ UpDateAllOH2(2);
+}" 0
+
+14 147
+"Trtp3"
+""
+1 694.5000000000001 392.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+145 0 0 0 0 0
+E "main()
+{
+  //command_TextField1();
+}" 0
+ E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:1 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,17,5,50,0,0,0,0,0
+0  693 383 776 416
+3 "3.1f" 5 0 0 0 0 -1  E E "main()
+{
+ UpDateAllOH2(4);
+}" 0
+
+2 148
+"PRIMITIVE_TEXT50"
+""
+1 586.5000000000002 286.2500000000001 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+146 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 586.5000000000002 286.2500000000001 666.5000000000002 310.2500000000001
+0 2 2 "0s" 0 0 0 65 0 0  586.5000000000002 286.2500000000001 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 9 I Max (A)
+LANG:10001 9 I Max (A)
+2 149
+"PRIMITIVE_TEXT51"
+""
+1 583 388 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+147 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 583 388 663 412
+0 2 2 "0s" 0 0 0 65 0 0  583 388 1
+2
+LANG:1 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+0 2
+LANG:1 9 Trip Time
+LANG:10001 9 Trip Time
+13 150
+"PUSH_BUTTON5"
+""
+1 589 490 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+148 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+0  587 478 691 517
+
+T 
+2
+LANG:1 2 ON
+LANG:10001 2 ON
+"main(mapping event)
+{
+  dpSet(Channel_No3+\".settings.onOff\",1);
+}" 0
+ E E E
+13 151
+"PUSH_BUTTON6"
+""
+1 710 490 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+149 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+0  708 478 812 517
+
+T 
+2
+LANG:1 3 OFF
+LANG:10001 3 OFF
+"main(mapping event)
+{
+  dpSet(Channel_No3+\".settings.onOff\",0);
+}" 0
+ E E E
+20 152
+"stgopt"
+""
+1 305.9999999999996 145.2680623431515 E E E 1 E 1 E N "FwStateOKNotPhysics" E N "_3DFace" E E
+ E E
+150 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 34 MS Sans Serif,-1,13,5,75,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,13,5,75,0,0,0,0,0
+0  303.9999999999996 143.2680623431515 522.9999999999996 186.2680623431515
+1
+T 
+2
+LANG:1 26 Apply Settings to all GEMs
+LANG:10001 26 Apply Settings to all GEMs
+
+0 
+1
+LANG:1 0 
+E E
+0 0 0 0 0
+0
+E"main(int button, int state)
+{
+  Ch_Opt=state;
+  Debug(Ch_Opt);
+}" 0
+20 153
+"lcVfat"
+""
+1 113 433 E E E 1 E 1 E N "FwStateOKNotPhysics" E N "_3DFace" E E
+ E E
+151 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  111 431 202 465
+1
+T 
+2
+LANG:1 12 Lock Channel
+LANG:10001 12 Lock Channel
+
+0 
+1
+LANG:1 0 
+E E
+0 0 0 0 0
+0
+E"main(int button, int state)
+{
+ //DebugN(\"Checkbox=\"+state);
+  //bug
+ int st;
+ 
+ if(state>0)
+  {
+   dpSetWait(Channel_No1+\".settings.onOff:_lock._original._locked\",1);
+   dpSetWait(Channel_No1+\".mask\",1);
+   dpGet(Channel_No1+\".settings.onOff:_lock._original._locked\",st);
+   ChildPanelOn(\"/vision/MessageInfo1\", \"MAO CH1\",makeDynString(\"$1:Channel Locked=\"+st),0,0);
+ }
+ else
+  {
+   
+  dpSetWait(Channel_No1+\".settings.onOff:_lock._original._locked\",0);
+  dpSetWait(Channel_No1+\".mask\",0); 
+  ChildPanelOn(\"/vision/MessageInfo1\", \"MAO CH1\",makeDynString(\"$1:Channel UnLocked=\"+st),0,0);
+ }
+}" 0
+20 154
+"lcOH2v"
+""
+1 383.5 433 E E E 1 E 1 E N "FwStateOKNotPhysics" E N "_3DFace" E E
+ E E
+152 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  381.5 431 472.5 465
+1
+T 
+2
+LANG:1 12 Lock Channel
+LANG:10001 12 Lock Channel
+
+0 
+1
+LANG:1 0 
+E E
+0 0 0 0 0
+0
+E"main(int button, int state)
+{
+ //DebugN(\"Checkbox=\"+state);
+  //bug
+ int st;
+ 
+ if(state>0)
+  {
+   dpSetWait(Channel_No2+\".settings.onOff:_lock._original._locked\",1);
+   dpSetWait(Channel_No2+\".mask\",1);
+   dpGet(Channel_No2+\".settings.onOff:_lock._original._locked\",st);
+   ChildPanelOn(\"/vision/MessageInfo1\", \"MAO CH1\",makeDynString(\"$1:Channel Locked=\"+st),0,0);
+ }
+ else
+  {
+   
+  dpSetWait(Channel_No2+\".settings.onOff:_lock._original._locked\",0);
+  dpSetWait(Channel_No2+\".mask\",0); 
+  ChildPanelOn(\"/vision/MessageInfo1\", \"MAO CH1\",makeDynString(\"$1:Channel UnLocked=\"+st),0,0);
+ }
+}" 0
+20 156
+"lcOH4v"
+""
+1 665 433 E E E 1 E 1 E N "FwStateOKNotPhysics" E N "_3DFace" E E
+ E E
+154 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  663 431 754 465
+1
+T 
+2
+LANG:1 12 Lock Channel
+LANG:10001 12 Lock Channel
+
+0 
+1
+LANG:1 0 
+E E
+0 0 0 0 0
+0
+E"main(int button, int state)
+{
+ //DebugN(\"Checkbox=\"+state);
+  //bug
+ int st;
+ 
+ if(state>0)
+  {
+   dpSetWait(Channel_No3+\".settings.onOff:_lock._original._locked\",1);
+   dpSetWait(Channel_No3+\".mask\",1);
+   dpGet(Channel_No3+\".settings.onOff:_lock._original._locked\",st);
+   ChildPanelOn(\"/vision/MessageInfo1\", \"MAO CH1\",makeDynString(\"$1:Channel Locked=\"+st),0,0);
+ }
+ else
+  {
+   
+  dpSetWait(Channel_No3+\".settings.onOff:_lock._original._locked\",0);
+  dpSetWait(Channel_No3+\".mask\",0); 
+  ChildPanelOn(\"/vision/MessageInfo1\", \"MAO CH1\",makeDynString(\"$1:Channel UnLocked=\"+st),0,0);
+ }
+}" 0
+0
+LAYER, 1 
+1
+LANG:1 0 
+0
+LAYER, 2 
+1
+LANG:1 0 
+0
+LAYER, 3 
+1
+LANG:1 0 
+0
+LAYER, 4 
+1
+LANG:1 0 
+0
+LAYER, 5 
+1
+LANG:1 0 
+0
+LAYER, 6 
+1
+LANG:1 0 
+0
+LAYER, 7 
+1
+LANG:1 0 
+0
+0

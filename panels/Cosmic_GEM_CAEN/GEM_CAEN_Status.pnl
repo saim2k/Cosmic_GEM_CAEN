@@ -1,0 +1,384 @@
+V 14
+1
+LANG:10001 0 
+PANEL,-1 -1 964 634 N "_3DFace" 0
+E E E E E 1 -1 -1 0  40 44
+""0  1
+E E 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:10001 0 
+30 0
+"FRAME1"
+""
+1 40 44 E E E 1 E 1 E N "FwStateOKNotPhysics" E N {0,0,0} E E
+ E E
+0 0 0 0 0 0
+E E E
+1
+1
+LANG:10001 0 
+
+4
+"hoverfclr" "N \"FwStateOKNotPhysics\""
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 0.5863309352517986 0 18.20143884892086 0 E 40 44 421 601
+1
+LANG:10001 35 MS Shell Dlg 2,-1,21,5,50,0,0,0,0,0
+0 1
+LANG:10001 2 HV
+30 1
+"FRAME2"
+""
+1 40 44 E E E 1 E 1 E N "FwStateOKNotPhysics" E N {0,0,0} E E
+ E E
+1 0 0 0 0 0
+E E E
+1
+1
+LANG:10001 0 
+
+4
+"hoverfclr" "N \"FwStateOKNotPhysics\""
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 1 442 0 0 E 40 44 421 601
+1
+LANG:10001 35 MS Shell Dlg 2,-1,21,5,50,0,0,0,0,0
+0 1
+LANG:10001 2 LV
+13 2
+"PUSH_BUTTON1"
+""
+1 130 109 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  128 88 282 142
+
+T 
+1
+LANG:10001 8 HV CRATE
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenCrateSY1527Operation\", \"GEM CAEN CRATE HV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_HV\"),0,0);
+}" 0
+ E E E
+13 3
+"PUSH_BUTTON2"
+""
+1 582 109 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  580 88 734 142
+
+T 
+1
+LANG:10001 8 LV CRATE
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenCrateSY1527Operation\", \"GEM CAEN CRATE LV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_LV\"),0,0);
+}" 0
+ E E E
+13 4
+"PUSH_BUTTON3"
+""
+1 130 210 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  128 189 282 243
+
+T 
+1
+LANG:10001 10 HV BOARD 1
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenBoardOperation\", \"GEM CAEN Board HV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_HV/board02\"),0,0);
+}" 0
+ E E E
+13 5
+"PUSH_BUTTON4"
+""
+1 130 300 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  128 279 282 333
+
+T 
+1
+LANG:10001 10 HV BOARD 2
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenBoardOperation\", \"GEM CAEN Board HV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_HV/board04\"),0,0);
+}" 0
+ E E E
+13 6
+"PUSH_BUTTON5"
+""
+1 582 172 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  580 151 734 205
+
+T 
+1
+LANG:10001 10 LV BOARD 1
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenBoardEasyOperation\", \"GEM CAEN Board HV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard01\"),0,0);
+}" 0
+ E E E
+13 11
+"PUSH_BUTTON10"
+""
+1 582 235 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  580 214 734 268
+
+T 
+1
+LANG:10001 10 LV BOARD 2
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenBoardEasyOperation\", \"GEM CAEN Board HV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard05\"),0,0);
+}" 0
+ E E E
+13 12
+"PUSH_BUTTON11"
+""
+1 582 300 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  580 279 734 333
+
+T 
+1
+LANG:10001 10 LV BOARD 3
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenBoardEasyOperation\", \"GEM CAEN Board HV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard09\"),0,0);
+}" 0
+ E E E
+13 13
+"PUSH_BUTTON12"
+""
+1 582 368 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  580 347 734 401
+
+T 
+1
+LANG:10001 10 LV BOARD 4
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenBoardEasyOperation\", \"GEM CAEN Board HV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard13\"),0,0);
+}" 0
+ E E E
+13 14
+"PUSH_BUTTON13"
+""
+1 582 430 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  580 409 734 463
+
+T 
+1
+LANG:10001 10 LV BOARD 5
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenBoardEasyOperation\", \"GEM CAEN Board HV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_LV/branchController00/easyCrate0/easyBoard17\"),0,0);
+}" 0
+ E E E
+30 15
+"FRAME3"
+""
+1 40 44 E E E 1 E 1 E N "FwStateOKNotPhysics" E N {0,0,0} E E
+ E E
+15 0 0 0 0 0
+E E E
+1
+1
+LANG:10001 0 
+
+4
+"hoverfclr" "N \"FwStateOKNotPhysics\""
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 0.341726618705036 8.881784197001252e-015 364.9640287769784 0 E 40 44 421 601
+1
+LANG:10001 35 MS Shell Dlg 2,-1,21,5,50,0,0,0,0,0
+0 1
+LANG:10001 0 
+13 16
+"PUSH_BUTTON14"
+""
+1 130 436 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  128 415 282 469
+
+T 
+1
+LANG:10001 10 BRANCH CON
+"main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenBoardSY1527A1676Operation\", \"GEM CAEN CRATE LV\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_LV/branchController00\"),0,0);
+}" 0
+ E E E
+13 17
+"PUSH_BUTTON15"
+""
+1 130 514 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+1
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+1
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  128 493 282 547
+
+T 
+1
+LANG:10001 3 MAO
+"main(mapping event)
+{
+  ChildPanelOn(\"/CMS_GEM_CAEN/fwCaenChannelOperationMao\", \"MAO CH1\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_LV/branchController00/easyCrate0/powerConverter22/channel000\"),0,0);
+}" 0
+ E E E
+0
+LAYER, 1 
+1
+LANG:10001 0 
+0
+LAYER, 2 
+1
+LANG:10001 0 
+0
+LAYER, 3 
+1
+LANG:10001 0 
+0
+LAYER, 4 
+1
+LANG:10001 0 
+0
+LAYER, 5 
+1
+LANG:10001 0 
+0
+LAYER, 6 
+1
+LANG:10001 0 
+0
+LAYER, 7 
+1
+LANG:10001 0 
+0
+0

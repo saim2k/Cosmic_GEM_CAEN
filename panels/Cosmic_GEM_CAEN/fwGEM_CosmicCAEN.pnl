@@ -1,0 +1,182 @@
+V 14
+1
+LANG:1 0 
+PANEL,-1 -1 1402 702 N "STD_background" 0
+E E E E E 1 -1 -1 0  280 219
+""0  1
+E E 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:1 0 
+6 202
+"RECTANGLE2"
+""
+1 50 220 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.959349593495935 0 1 2.032520325203252 -87 1 E 50 220 1280 660
+1 12 0 "" 0
+0
+1 17 1 "" 0
+0
+1 22 2 "" 0
+0
+1 27 3 "" 0
+0
+1 32 4 "" 0
+0
+1 37 5 "" 0
+0
+1 42 6 "" 0
+0
+1 47 7 "" 0
+0
+1 52 8 "" 0
+0
+1 57 9 "" 0
+0
+1 62 10 "" 0
+0
+1 90 11 "" 0
+0
+1 118 12 "" 0
+0
+1 146 13 "" 0
+0
+1 174 14 "" 0
+0
+0
+LAYER, 1 
+1
+LANG:1 0 
+0
+LAYER, 2 
+1
+LANG:1 0 
+0
+LAYER, 3 
+1
+LANG:1 0 
+0
+LAYER, 4 
+1
+LANG:1 0 
+0
+LAYER, 5 
+1
+LANG:1 0 
+0
+LAYER, 6 
+1
+LANG:1 0 
+0
+LAYER, 7 
+1
+LANG:1 0 
+0
+3 0 "PANEL_REF0" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 190 120 T 12 0.9815483134052688 0 1 -62.99417954700112 -29
+1
+"$CH_id""1"
+3 1 "PANEL_REF1" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 354 120 T 13 0.9815483134052688 0 1 4.031897054534724 -29
+1
+"$CH_id""2"
+3 2 "PANEL_REF2" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 510 120 T 14 0.9815483134052703 0 1 78.91036016331184 -29
+1
+"$CH_id""3"
+3 3 "PANEL_REF3" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 804 120 T 15 0.9815483134052703 0 1 14.3351560221627 -29
+1
+"$CH_id""4"
+3 4 "PANEL_REF4" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 1080 111.5 T 16 0.9815483134052703 0 1 -30.572178477692 -20.5
+1
+"$CH_id""5"
+3 5 "PANEL_REF5" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 190 120 T 17 1 0 1 -69.5 543
+1
+"$CH_id""6"
+3 6 "PANEL_REF6" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 354 120 T 18 1 0 1 -5.500000000000115 543
+1
+"$CH_id""7"
+3 7 "PANEL_REF7" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 510 120 T 19 1 0 1 66.49999999999983 543
+1
+"$CH_id""8"
+3 8 "PANEL_REF8" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 804 120 T 20 1 0 1 -3.499999999999943 543
+1
+"$CH_id""9"
+3 9 "PANEL_REF9" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_pmt.pnl" 1080 111.5 T 21 1 0 1 -53.49999999999994 551.5
+1
+"$CH_id""10"
+3 10 "PANEL_REF10" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_gemini.pnl" 242 356.5 T 22 1 0 1 -120.0000000000001 -87
+1
+"$CH_id""1"
+3 11 "PANEL_REF11" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_gemini.pnl" 472.9999999999999 356.4999999999999 T 23 1 0 1 -123.0000000000001 -87
+1
+"$CH_id""2"
+3 12 "PANEL_REF12" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_gemini.pnl" 706.9999999999998 356.4999999999999 T 24 1 0 1 -129.0000000000001 -87
+1
+"$CH_id""3"
+3 13 "PANEL_REF13" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_gemini.pnl" 895 356.5 T 25 1 0 1 -93.00000000000011 -87
+1
+"$CH_id""4"
+3 14 "PANEL_REF14" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"Cosmic_GEM_CAEN/cosmic_gemini.pnl" 1121 356.4999999999999 T 26 1 0 1 -93.00000000000011 -87
+1
+"$CH_id""5"
+0

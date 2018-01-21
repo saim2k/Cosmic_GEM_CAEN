@@ -1,0 +1,34 @@
+#uses "CMSfwInstallUtils/CMSfwInstallUtils.ctl"
+#uses "fwInstallationUtils.ctl"
+#uses "CMSfwFsmXml/CMSfwFsmXml.ctl"
+#uses "fwFsm.ctl"
+#uses "fwFsmTreeDisplay.ctl"
+#uses "Cosmic_GEM_CAEN/GEMFSM.ctl"
+#uses "CMSfwDetectorProtection/CMSfwDetectorProtection.ctl"
+#uses "/Cosmic_GEM_CAEN/fwGEM_DetProt.ctl"
+main(){
+  
+ dyn_string exc;
+ string privileges;
+ string file_path;
+ //dyn_string proj_path;
+ fwInstallationUtils_loadConfigurations("Cosmic_GEM_CAEN",exc);
+ fwInstallationUtils_appendManagers("Cosmic_GEM_CAEN", exc);
+ file_path=CMSfwFsmXml_findPath  ("/data/Cosmic_GEM_CAEN/GEMFSM_V1.xml");
+  CMSfwFsmXml_import(file_path,true);
+  fwFsmTree_stopTree();
+  fwFsmTree_generateAll();
+  fwFsmTree_refreshTree();
+  fwFsm_restartAllDomains(); 
+  privileges="CMS_GEM:Control"+"|"+"CMS_GEM:Debug";
+  fwFsmTree_accessTreeNodeRec("GEM_ENDCAP_Minus",privileges,1);
+  ChangeBMHV();        //Cosmic Beam
+  ChangeBMLV();        //Cosmic Beam
+ //Detector Protection
+  //configureInputCond(); 
+  //configureProtection();	
+ //
+ DebugN("Cosmic_GEM_CAEN has been installed", exc);
+ fwInstallationUtils_endPostInstall("CMS_GEM_CAEN");
+  
+}

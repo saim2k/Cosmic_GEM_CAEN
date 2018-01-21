@@ -1,0 +1,102 @@
+V 14
+1
+LANG:1 0 
+PANEL,-1 -1 1586 537 N "_3DFace" 2
+"$2"
+"$TrPlot"
+E E E E E 1 -1 -1 0  0 0
+""0  1
+E E 3
+"CBRef" "1"
+"EClose" E
+"dpi" "120"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:1 0 
+1 116 1 "" 17
+0
+6 115
+"Border1"
+""
+1 110 650 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+int x,y;
+float xSize,ySize;
+dyn_string exceptionInfo;
+string sys = getSystemName();//dpSubStr($2,DPSUB_SYS);
+//dyn_string dpes=dpNames(getSystemName()+\"CAEN*\",\"FwCaenChannel\");
+string TrendDp= sys+$TrPlot;
+//string TrendDp= dpNames(sys+\"T*\",\"FwTrendingPlot\");
+getValue(\"Border1\",\"position\",x,y);
+getValue(\"Border1\",\"size\",xSize,ySize);
+string channel = fwDU_getPhysicalName($2);
+////addSystemName(channel);
+////addSystemName(TrendDp);
+//DebugN(channel,TrendDp);
+//DebugN(\">>>>>>>>>>>>>>>>>\",channel);
+fwTrending_addFaceplate (myModuleName(), myPanelName(), \"Channel Trend\",
+			TrendDp,
+			makeDynString(\"device\"),
+			makeDynString(channel),
+			x,y-ySize, exceptionInfo,1.5,1.6);
+if(dynlen(exceptionInfo) > 0)
+	{
+	fwExceptionHandling_display(exceptionInfo);
+	return;
+	}
+this.visible=FALSE;
+}
+
+" 0
+ E 0 1 1 0 1 E 1.708677685950414 0 1.983333333333333 543.0454545454546 -792.1666666666663 0 E 110 410 594 650
+0
+LAYER, 1 
+1
+LANG:1 0 
+0
+LAYER, 2 
+1
+LANG:1 0 
+0
+LAYER, 3 
+1
+LANG:1 0 
+0
+LAYER, 4 
+1
+LANG:1 0 
+0
+LAYER, 5 
+1
+LANG:1 0 
+0
+LAYER, 6 
+1
+LANG:1 0 
+0
+LAYER, 7 
+1
+LANG:1 0 
+0
+3 1 "PANEL_REF1" -1
+"layoutAlignment" "AlignCenter"
+"" ""
+"fwCaen/fwCaenChannelOperation.pnl" 0 -10 T 1 1.029411764705883 0 0.9485188626517004 1.705882352941426 23.23352165725048
+1
+"$sDpName""$2"
+0

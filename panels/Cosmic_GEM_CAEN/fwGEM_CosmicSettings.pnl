@@ -1,0 +1,1038 @@
+V 14
+2
+LANG:1 0 
+LANG:10001 0 
+PANEL,-1 -1 1246 512 N "_3DFace" 0
+"main()
+{
+  //autus=\"00\";
+  //cfsm.visible=false;
+  //cfdb.visible=false;
+}" 0
+ E E E E 1 -1 -1 0  364 68
+""0  1
+E "#uses \"CMS_GEM_CAEN/GEM_Rad.ctl\"
+string ghost;
+unsigned gport;
+string autus;
+int socket;" 0
+ 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:1 0 
+13 0
+"cfsm"
+""
+1 489 142 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  487 124 651 172
+
+T 
+2
+LANG:1 10 Config FSM
+LANG:10001 10 Config FSM
+"main(mapping event)
+{
+   ChildPanelOn(\"/fwFSM/ui/fwFsmOperation.pnl\",\"FSM Operation\",makeDynString(\"\"),0,0);
+}" 0
+ E E E
+13 5
+"PUSH_BUTTON2"
+""
+1 489 225 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  487 207 651 255
+
+T 
+2
+LANG:1 7 FSM ACC
+LANG:10001 7 FSM ACC
+"main(mapping event)
+{
+   ChildPanelOn(\"/fwFSM/ui/fwTreeNodeAccess.pnl\",\"FSM Operation\",makeDynString(\"$1:GEM_ENDCAP_Minus\"),0,0);
+}" 0
+ E E E
+13 6
+"PUSH_BUTTON3"
+""
+1 489 391 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  487 373 651 421
+
+T 
+2
+LANG:1 14 Manage Recipes
+LANG:10001 14 Manage Recipes
+"main(mapping event)
+{
+   ChildPanelOn(\"/fwConfigurationDB/fwConfigurationDB_RecipeManage.pnl\",\"Recipes Management\",makeDynString(\"\"),0,0);
+}" 0
+ E E E
+30 7
+"FRAME1"
+""
+1 20 14 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+7 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1.275862068965517 0 1.23121387283237 -5.517241379310344 -3.236994219653181 0 E 20 14 311 361
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:1 29 Radiation Monitoring Settings
+LANG:10001 29 Radiation Monitoring Settings
+2 8
+"PRIMITIVE_TEXT1"
+""
+1 30 50 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1.243243243243243 0 1 -6.81081081081081 0 0 E 30 50 100 80
+0 2 2 "0s" 0 0 0 65 0 0  30 50 1
+2
+LANG:1 36 Times New Roman,-1,16,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:1 8 Port No.
+LANG:10001 8 Port No.
+14 9
+"PortNo"
+""
+1 120 49 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  118 38 202 72
+3 "0s" 0 0 0 0 0 -1  E E E
+2 10
+"PRIMITIVE_TEXT2"
+""
+1 30 50 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1.243243243243243 0 1 -6.810810810810825 56 0 E 30 50 100 80
+0 2 2 "0s" 0 0 0 65 0 0  30 50 2
+2
+LANG:1 36 Times New Roman,-1,16,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:1 4 Host
+LANG:10001 4 Host
+2
+LANG:1 36 Times New Roman,-1,16,5,50,0,0,0,0,0
+LANG:10001 36 Times New Roman,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:1 0 
+LANG:10001 0 
+14 11
+"TEXT_FIELD2"
+""
+1 120 105 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  118 94 362 128
+3 "0s" 0 0 0 0 0 -1  E E E
+13 12
+"PUSH_BUTTON4"
+""
+1 40 165 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  38 149 162 193
+
+T 
+2
+LANG:1 10 Initialize
+LANG:10001 10 Initialize
+"main(mapping event)
+{
+  
+  
+  
+  ghost=\"gemradmon.cern.ch\";
+  gport=4005;
+  dyn_errClass err; 
+   socket=tcpOpen(ghost, gport); 
+   err=getLastError(); 
+   if(socket==-1)
+   {
+    fwExceptionHandling_display(err);
+   }
+   else
+   {
+    RadMsg.text=\"Port No=\"+socket;
+    
+   }
+  
+}" 0
+ E E E
+13 14
+"PUSH_BUTTON6"
+""
+1 215 165 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  213 149 337 193
+
+T 
+2
+LANG:1 10 Start Data
+LANG:10001 10 Start Data
+"main(mapping event)
+{
+  readRadMon(\"gRad1\",socket);
+ 
+  
+}" 0
+ E E E
+13 15
+"PUSH_BUTTON7"
+""
+1 40 216 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  38 200 162 244
+
+T 
+2
+LANG:1 10 Close Port
+LANG:10001 10 Close Port
+"main(mapping event)
+{
+  tcpClose(socket);
+  RadMsg.text=\"Port Closed\";
+  
+}" 0
+ E E E
+13 16
+"PUSH_BUTTON8"
+""
+1 215 216 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  213 200 337 244
+
+T 
+2
+LANG:1 9 Stop Data
+LANG:10001 9 Stop Data
+"main(mapping event)
+{
+   RadMonClose();
+}" 0
+ E E E
+2 17
+"RadMsg"
+""
+1 30 320 E E E 1 E 1 E N {231,19,51} E N "_Window" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1 0 2.705882352941177 0 -542.4705882352941 0 E 30 320 350 350
+0 2 2 "0s" 0 0 0 65 0 0  30 320 1
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:1 3 msg
+LANG:10001 3 msg
+2 18
+"PRIMITIVE_TEXT4"
+""
+1 190 320 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E U  0 E 190 320 191 332
+0 2 2 "0s" 0 0 0 193 0 0  190 320 1
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:1 0 
+LANG:10001 0 
+13 19
+"den"
+""
+1 489 64 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  487 46 651 94
+
+T 
+2
+LANG:1 3 DEN
+LANG:10001 3 DEN
+"main(mapping event)
+{
+   //ChildPanelOn(\"/fwDeviceEditorNavigator/fwDeviceEditorNavigator.pnl\",\"DEN\",makeDynString(\"\"),50,0);
+   ModuleOnWithPanel(\"GEMDEN\", -1, -1, 0, 0, 1, 1, \"Scale\",\"fwDeviceEditorNavigator/fwDeviceEditorNavigator.pnl\",\"DEN\",makeDynString(\"\"));
+
+}" 0
+ E E E
+30 20
+"FRAME2"
+""
+1 400 14 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+20 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.8571428571428571 0 1 57.14285714285716 0 0 E 400 14 751 441
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:1 11 Frame Title
+LANG:10001 11 Frame Title
+30 21
+"FRAME3"
+""
+1 720 14 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+21 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 720 14 1031 441
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:1 19 Detector Protection
+LANG:10001 19 Detector Protection
+13 22
+"PUSH_BUTTON9"
+""
+1 788 120 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  786 99 933 153
+
+T 
+2
+LANG:1 15 Load Conditions
+LANG:10001 15 Load Conditions
+"#uses \"CMSfwDetectorProtection/CMSfwDetectorProtection.ctl\"
+#uses \"/CMS_GEM_CAEN/fwGEM_DetProt.ctl\"
+main(mapping event)
+{
+  configureInputCond(); 
+  configureProtection();
+}
+
+
+" 0
+ E E E
+13 24
+"PUSH_BUTTON11"
+""
+1 788 233 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  786 212 933 266
+
+T 
+2
+LANG:1 17 Fire Protect Test
+LANG:10001 17 Fire Protect Test
+"#uses \"CMSfwDetectorProtection/CMSfwDetectorProtection.ctl\"
+main(mapping event)
+{
+  dpSet(getSystemName()+\"GEM_ProtStb.Value\",TRUE);
+}
+
+
+" 0
+ E E E
+13 25
+"PUSH_BUTTON12"
+""
+1 788 349.0000000000002 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  786 328.0000000000002 933 382.0000000000002
+
+T 
+2
+LANG:1 18 Release Protection
+LANG:10001 18 Release Protection
+"#uses \"CMSfwDetectorProtection/CMSfwDetectorProtection.ctl\"
+main(mapping event)
+{
+  
+  dpSet(getSystemName()+\"GEM_ProtStb.Value\",FALSE);
+  
+}
+
+
+" 0
+ E E E
+2 26
+"detpr"
+""
+1 790 70 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E U  0 E 790 70 920 110
+0 2 2 "0s" 0 0 0 65 0 0  790 70 1
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:1 8 Det Prot
+LANG:10001 8 Det Prot
+13 31
+"PUSH_BUTTON17"
+""
+1 40 388.0000000000001 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  38 372.0000000000001 162 416.0000000000001
+
+T 
+2
+LANG:1 11 Test Config
+LANG:10001 11 Test Config
+"main(mapping event)
+{
+  
+  if(testc.text==\"9345\")
+     ChildPanelOn(\"/para\", \"Parameter Config\",makeDynString(\"\"),0,0);
+    //int iCloseWindow; // Avoid closing panel with \"X\" window button.
+  
+  
+  
+}" 0
+ E E E
+14 32
+"testc"
+""
+1 200 389 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  198 378 302 412
+3 "0s" 0 0 0 0 0 -1  E E E
+13 33
+"PUSH_BUTTON18"
+""
+1 130 269 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  128 258 252 292
+
+T 
+2
+LANG:1 10 Show Graph
+LANG:10001 10 Show Graph
+"main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/CMS_GEM_RadPlot\",\"chsettings\",makeDynString(\"\"));
+}" 0
+ E E E
+13 34
+"PUSH_BUTTON1"
+""
+1 489 316 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  487 291 651 339
+
+T 
+2
+LANG:1 17 Set Alert Configs
+LANG:10001 17 Set Alert Configs
+"main(mapping event)
+{
+  string sys;
+  dyn_string hvchannels,lvchannels,powerConSt,powerCon;
+  sys=getSystemName();
+  hvchannels=dpNames(sys+\"CAEN*HV*/channel???\",\"FwCaenChannel\");
+  lvchannels=dpNames(sys+\"CAEN*LV*easyBoard*/channel???\",\"FwCaenChannel\");
+  //powerConSt=dpNames(sys+\"CAEN*LV*powerConverter*.actual.isOn\",\"FwCaenChannel\");
+  //powerCon=dpNames(sys+\"CAEN*LV*powerConverter*.settings.onOff\",\"FwCaenChannel\");
+  //dyn_string MCboard = dpNames(\"*:CAEN/GEM_CAEN_HV/board??\",\"FwCaenBoardSY1527A1515\");
+  //Alerts for HV
+  for (int i=1; i<=dynlen(hvchannels); i++)
+  {  
+    //setting channel alerts
+    string dp = hvchannels[i];
+    setTripAlerts_hvchannel(dp);
+    //setTemperatureAlerts_hvchannel(dp);
+    setExtdisAlerts_hvchannel(dp);
+    setLocalAlerts_hvchannel(dp);
+    
+    DebugTN(\"Alarms for dp \"+dp+\" set.\");
+  }
+  
+  //Alerts forLV
+  for (int i=1; i<=dynlen(lvchannels); i++)
+  {  
+    //setting channel alerts
+    string dp = lvchannels[i];
+    setTripAlerts_hvchannel(dp);
+    //setTemperatureAlerts_hvchannel(dp);
+    setExtdisAlerts_hvchannel(dp);
+    setLocalAlerts_hvchannel(dp);
+    
+    DebugTN(\"Alarms for dp \"+dp+\" set.\");
+  }
+ /* 
+  for (int i=1; i<=dynlen(MCboard); i++)
+  {
+    //setting board alerts
+    //string dp = \"CAEN/GEM_CAEN_HV/board12\";
+    string dp = MCboard[i];
+    setTemperatureAlerts_board(dp);
+     
+    DebugTN(\"Alarms for dp \"+dp+\" set.\");
+  }*/
+
+}
+
+void setTripAlerts_hvchannel(string dp)
+{
+string dpe = dp+\".actual.Trip\";
+string dpAlias = dpGetAlias(dp+\".\");
+  
+dyn_string aClasses, aTexts, exceptionInfo, summary /*ignored if not summary alert*/, alertPanelParameters;
+dyn_float limits; //used only for analog alerts, otherwise ignored
+string alertPanel, alertHelp; 
+
+dyn_string exceptionInfo;
+
+aTexts = makeDynString(\"OK\", \"Chamber \"+dpAlias+\" tripped! Call 161558!\");
+aClasses = makeDynString(\"\", \"_fwErrorAck_70\");
+
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_BINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+
+}
+
+void setTemperatureAlerts_hvchannel(string dp)
+{
+string dpe = dp+\".actual.Temp\";
+string dpAlias = dpGetAlias(dp+\".\");
+
+dyn_string aClasses, aTexts, exceptionInfo, summary /*ignored if not summary alert*/, alertPanelParameters;
+dyn_float limits = makeDynFloat(40,50,10000); //used only for analog alerts, otherwise ignored
+string alertPanel, alertHelp; 
+
+dyn_string exceptionInfo;
+
+aTexts = makeDynString(\"OK\", \"WARNING: HV channel \"+dpAlias+\" has temperature >40\",
+                       \"ERROR: HV channel \"+dp+\" has temperature >50. Call 161558!\", \"OK. Temperature reading for HV channel\"+dp+\" is probably wrong (>10000).\");
+aClasses = makeDynString(\"\", \"_fwWarningAck\", \"_fwErrorAck_70\", \"_fwWarningNack\");
+
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_NONBINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+
+}
+
+void setExtdisAlerts_hvchannel(string dp)
+{
+string dpe = dp+\".actual.externalDisable\";
+string dpAlias = dpGetAlias(dp+\".\");
+  
+dyn_string aClasses, aTexts, exceptionInfo, summary /*ignored if not summary alert*/, alertPanelParameters;
+dyn_float limits; //used only for analog alerts, otherwise ignored
+string alertPanel, alertHelp; 
+
+dyn_string exceptionInfo;
+
+aTexts = makeDynString(\"OK\", \"Chamber \"+dpAlias+\" External Disabled! Call 161558!\");
+aClasses = makeDynString(\"\", \"_fwErrorAck_70\");
+
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_BINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+
+  
+  
+}
+
+
+void setLocalAlerts_hvchannel(string dp)
+{
+  
+string dpe, dpAlias ;
+dyn_string aClasses, aTexts, exceptionInfo, summary, alertPanelParameters;
+dyn_float limits; //used only for analog alerts, otherwise ignored
+string alertPanel, alertHelp; 
+dyn_string exceptionInfo;
+
+//general channel status
+/*
+string dpe = dp+\".\";
+string dpAlias = dpGetAlias(dp+\".\");
+
+dyn_string aClasses, aTexts, exceptionInfo, summary, alertPanelParameters;
+dyn_float limits; //used only for analog alerts, otherwise ignored
+string alertPanel, alertHelp; 
+
+dyn_string exceptionInfo;
+
+aTexts = makeDynString(\"OK\", \"HV channel \"+dpAlias+\" in False status\");
+aClasses = makeDynString(\"\", \"_fwErrorNack\");
+
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_BINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+*/
+  
+//.actual.OvC
+dpe = dp+\".actual.OvC\";
+
+aTexts = makeDynString(\"OK\", \"Chamber \"+dpAlias+\" overcurrent\");
+aClasses = makeDynString(\"\", \"_fwErrorAck\");
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_BINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+
+//.actual.OvV
+dpe = dp+\".actual.OvV\";
+
+aTexts = makeDynString(\"OK\", \"Chamber \"+dpAlias+\" overvoltage\");
+aClasses = makeDynString(\"\", \"_fwErrorNack\");
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_BINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+
+//.actual.UnV
+dpe = dp+\".actual.UnV\";
+
+aTexts = makeDynString(\"OK\", \"Chamber \"+dpAlias+\" undervoltage\");
+aClasses = makeDynString(\"\", \"_fwErrorAck\");
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_BINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+
+//.actual.status
+string dpe = dp+\".actual.status\";
+string dpAlias = dpGetAlias(dp+\".\");
+  
+dyn_string aClasses, aTexts, exceptionInfo, summary /*ignored if not summary alert*/, alertPanelParameters;
+dyn_float limits = makeDynFloat(63); //used only for analog alerts, otherwise ignored
+string alertPanel, alertHelp; 
+
+dyn_string exceptionInfo;
+
+aTexts = makeDynString(\"OK\", \"ERROR: HV channel \"+dpAlias+\" has faulty status (>=64)\");
+aClasses = makeDynString(\"\", \"_fwErrorAck\");
+
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_NONBINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+
+
+}
+
+
+
+
+
+
+
+
+
+void setTemperatureAlerts_board(string dp)
+{
+//================= under temperature==================
+string dpe = dp+\".Status.underTemperature\";
+string dpAlias = dpGetAlias(dp+\".\");
+  
+dyn_string aClasses, aTexts, exceptionInfo, summary /*ignored if not summary alert*/, alertPanelParameters;
+dyn_float limits; //used only for analog alerts, otherwise ignored
+string alertPanel, alertHelp; 
+
+dyn_string exceptionInfo;
+
+aTexts = makeDynString(\"OK\", \"ERROR: HV board \"+dpAlias+\" underTemperature. Call 161558.\");
+aClasses = makeDynString(\"\", \"_fwErrorAck_70\");
+
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_BINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+
+
+//================= over temperature==================
+string dpe = dp+\".Status.overTemperature\";
+string dpAlias = dpGetAlias(dp+\".\");
+  
+dyn_string aClasses, aTexts, exceptionInfo, summary /*ignored if not summary alert*/, alertPanelParameters;
+dyn_float limits; //used only for analog alerts, otherwise ignored
+string alertPanel, alertHelp; 
+
+dyn_string exceptionInfo;
+
+aTexts = makeDynString(\"OK\", \"ERROR: HV board \"+dpAlias+\" overTemperature. Call 161558.\");
+aClasses = makeDynString(\"\", \"_fwErrorAck_70\");
+
+
+fwAlertConfig_set( dpe, DPCONFIG_ALERT_BINARYSIGNAL, aTexts, limits, aClasses, 
+                  summary, alertPanel, alertPanelParameters, alertHelp, exceptionInfo);
+fwAlertConfig_activate( dpe, exceptionInfo, TRUE, TRUE); 
+
+DebugTN(\"exceptionInfo: \", exceptionInfo);
+}" 0
+ E E E
+13 35
+"BtRcp"
+""
+1 1309.949562243715 30.20394866610218 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  1087.949562243715 46.20394866610218 1190.949562243715 94.20394866610218
+
+T 
+2
+LANG:1 18 Save/ Load Recipe 
+LANG:10001 18 Save/ Load Recipe 
+"main(mapping event)
+{
+  ChildPanelOn(\"/CMS_GEM_GAS/CMS_GEMfwRecipeHandling\", \"GEM RECIPES\",makeDynString(\"\"),0,0);
+}" 0
+ E E E
+0
+LAYER, 1 
+1
+LANG:1 0 
+0
+LAYER, 2 
+1
+LANG:1 0 
+0
+LAYER, 3 
+1
+LANG:1 0 
+0
+LAYER, 4 
+1
+LANG:1 0 
+0
+LAYER, 5 
+1
+LANG:1 0 
+0
+LAYER, 6 
+1
+LANG:1 0 
+0
+LAYER, 7 
+1
+LANG:1 0 
+0
+0

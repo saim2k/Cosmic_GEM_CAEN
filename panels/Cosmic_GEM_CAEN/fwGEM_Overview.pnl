@@ -1,0 +1,3088 @@
+V 14
+2
+LANG:1 0 
+LANG:10001 0 
+PANEL,-1 -1 1224 700 N "_3DFace" 0
+"main()
+{
+ prevDp1=\"\";
+}" 0
+ E E E E 1 -1 -1 0  0 0
+""0  1
+E "//#uses \"CMS_GEMfw/CMS_GEMfw.ctl\"
+global string prevDp1,prevDp2;
+DV_Show(string id)
+{
+  string chtype=\"*\"+id;
+  dyn_string hvch,dppmt;
+  float len,gem,v0,i0,im,vm;
+  bool chmask;
+  dpGetAllAliases(hvch,dppmt,chtype);
+  len=dynlen(hvch);
+  
+   if(prevDp1!=\"\")
+   {
+     //dpDisconnect(\"DV_Update\",prevDp1,prevDp2);
+   }
+    
+    dpGet(hvch[1]+\"actual.vMon\",vm);
+    dpGet(hvch[1]+\"actual.iMon\",im);
+    dpGet(hvch[1]+\"settings.v0\",v0);
+    dpGet(hvch[1]+\"settings.i0\",i0);
+    dview.text=\"Details for \"+id;
+    dvVset.text=v0;
+    dvCset.text=i0;
+    dvVolt.text=vm;
+    dvCurrent.text=im; 
+    /*dpConnect(\"DV_Update\",hvch[1]+\"actual.vMon\",hvch[1]+\"actual.iMon\");
+    if(prevDp1!=\"\")
+    {
+     dpDisconnect(\"DV_Update\",prevDp1,prevDp2);
+     DebugN(\"Pre dP \"+prevDp1+\" , \"+prevDp2);
+    }*/
+    prevDp1=hvch[1]+\"actual.vMon\";
+    prevDp2=hvch[1]+\"actual.iMon\";
+    
+    
+}
+DV_Update(string dp1,float dpv1,string dp2,float dpv2)
+{
+    /*dpGet(hvch[1]+\"actual.vMon\",vm);
+    dpGet(hvch[1]+\"actual.iMon\",im);
+    dpGet(hvch[1]+\"settings.v0\",v0);
+    dpGet(hvch[1]+\"settings.i0\",i0);*/
+    dvVolt.text=dpv1;
+    dvCurrent.text=dpv2; 
+}
+
+showColor(string dp, string state)
+{
+  DebugN(dp, state);
+  string color;
+  fwCU_getStateColor(dp, state, color);
+  
+  this.backCol(color);
+}
+showChamberHvPlots(string endcap,bool isTop)
+{
+    
+  string chamberNumber;
+  sprintf(chamberNumber, \"%05d\");
+  
+ 
+ if(isTop)
+    topBottom = \"Top_Scintillators\";
+  else
+    topBottom = \"Bottom_Scintillators\";
+    
+  dyn_string channels = CMS_GEMfwGetHvSystem()+(\"@CMS_GEM/HV_Scientillators/\"+ topBottom + \"/\" + ChamberNumber);
+  DebugN(\"dpNames\",channels);
+  string channelName = dpSubStr(channels[channelNumber], DPSUB_SYS_DP);
+  string template = \"device=\" + channelName + \",\";
+  //  string plotDp = CMS_GEMfw_getGemSystemName() + \"GEM_ChamberHV\";
+  string plotDp = SystemName + \"GEM_HV_Trend\";
+
+
+  string alias = dpGetAlias(channelName + \".\");
+  string shortAlias;
+  dyn_string exceptionInfo;
+  fwDevice_getName(alias, shortAlias, exceptionInfo);
+  
+  ChildPanelOnRelativ(\"CMS_GEMfwSupervisorHvPlot.pnl\",shortAlias,
+              makeDynString(\"$templateParameters:\" + template, \"$plotDpName:\" + plotDp), 0, 0);
+}           
+
+StatusUpdate(string dp, string state)
+{
+  DebugN(dp, state);
+  string color;
+  //fwCU_getStateColor(dp, state, color);
+  //fwUi_getObjStateColor(dp, \"GEM_HV\", state, color);
+  if(state==\"OFF\")
+     color=\"FwStateOKNotPhysics\";
+  else if(state==\"ON\")
+     color=\"FwStateOKPhysics\";
+  else if(state==\"STANDBY\")
+     color=\"FwStateOKPhysics\";
+  else if(state==\"RAMPING_UP\")
+     color=\"FwStateAttention1\";
+  else if(state==\"RAMPING_DOWN\")
+     color=\"FwStateAttention1\";
+  else if(state==\"WARNING\")
+     color=\"FwStateAttention2\";
+  else
+     color=\"FwStateAttention3\";
+  this.backCol(color);
+  
+}" 0
+ 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:1 0 
+30 124
+"FRAME9"
+""
+1 531 63 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+124 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 531 63 705 569
+2
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:1 0 
+LANG:10001 0 
+30 6
+"FRAME1"
+""
+1 39 88 E E E 1 E 1 E N "STD_value_invalid" E N {0,0,0} E E
+ E E
+6 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.9081632653061226 0 1.165505226480836 328.5816326530612 -87.56445993031358 0 E 39 88 432 663
+2
+LANG:1 34 MS Sans Serif,-1,20,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,20,5,50,0,0,0,0,0
+0 2
+LANG:1 11 HV Channels
+LANG:10001 4 CAEN
+30 9
+"FRAME4"
+""
+1 39 88 E E E 1 E 1 E N "STD_value_invalid" E N {0,0,0} E E
+ E E
+9 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.5357142857142857 0 1.165505226480836 957.1071428571429 -87.56445993031369 0 E 39 88 432 663
+2
+LANG:1 34 MS Sans Serif,-1,20,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,20,5,50,0,0,0,0,0
+0 2
+LANG:1 3 GAS
+LANG:10001 3 GAS
+2 10
+"PRIMITIVE_TEXT1"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 341.9058661557868 405.9228611500698 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 GEM 9
+LANG:10001 8 GEM M L1
+6 11
+"hvs2"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM08\");
+}" 0
+ "main(mapping event)
+{
+  //ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[1]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240595 348.334502103787 1 E 153 126 212 155
+2 13
+"PRIMITIVE_TEXT2"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 343.0819698339084 450.9228611500698 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 2
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 6 GEM 10
+LANG:10001 8 GEM M L2
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 1
+LANG:1 0 
+6 14
+"hvs1"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM09\");
+}" 0
+ "main(mapping event)
+{
+  //ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[1]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240595 397.399018232819 1 E 153 126 212 155
+2 15
+"PRIMITIVE_TEXT3"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 340.2151172423057 0.8723702664792512 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 GEM 1
+LANG:10001 9 GEM 27 L1
+6 16
+"hvs3"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM00\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/Cosmic_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[1]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240596 -52.65147265077162 1 E 153 126 212 155
+2 17
+"PRIMITIVE_TEXT4"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.744928602331989 0 0.5897615708274895 342.0256984418575 45.87237026647925 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 GEM 2
+LANG:10001 9 GEM 27 L2
+6 18
+"hvs4"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM01\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[2]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240596 -7.651472650771623 1 E 153 126 212 155
+2 19
+"PRIMITIVE_TEXT5"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 340.1603675363817 100.807854137447 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 GEM 3
+LANG:10001 9 GEM 28 L1
+6 20
+"hvs5"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM02\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[3]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240595 47.28401122019606 1 E 153 126 212 155
+2 21
+"PRIMITIVE_TEXT6"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.744928602331989 0 0.5897615708274895 341.9716787320124 145.8723702664793 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 GEM 4
+LANG:10001 9 GEM 28 L2
+6 22
+"hvs6"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM03\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[4]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240595 92.34852734922838 1 E 153 126 212 155
+2 23
+"PRIMITIVE_TEXT7"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 340.1056178304576 200.8723702664793 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 GEM 5
+LANG:10001 9 GEM 29 L1
+6 24
+"hvs7"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM04\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[5]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240596 147.3485273492284 1 E 153 126 212 155
+2 25
+"PRIMITIVE_TEXT8"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.744928602331989 0 0.5897615708274895 341.9176590221672 245.8723702664793 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 GEM 6
+LANG:10001 9 GEM 29 L2
+6 26
+"hvs8"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM05\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[6]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240596 192.3485273492284 1 E 153 126 212 155
+2 27
+"PRIMITIVE_TEXT9"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 340.0508681245333 300.8723702664793 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 GEM 7
+LANG:10001 9 GEM 30 L1
+6 28
+"hvs9"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM06\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[7]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240595 247.3485273492284 1 E 153 126 212 155
+2 29
+"PRIMITIVE_TEXT10"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.744928602331989 0 0.5897615708274895 341.8636393123221 345.8723702664793 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 GEM 8
+LANG:10001 9 GEM 30 L2
+6 30
+"hvs10"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_HV\", \"GEM_HV/GEM_Detector_HV/HV_GEM07\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[8]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 402.2337022240595 292.3485273492283 1 E 153 126 212 155
+6 32
+"lvs31"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT08\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(25);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.1740664828969 351.9775596072926 1 E 153 126 212 155
+6 34
+"lvs34"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT09\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(28);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.174066482897 393.3345021037869 1 E 153 126 212 155
+6 36
+"lvs7"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT00\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(1);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.1740664828969 -53.07293127629802 1 E 153 126 212 155
+6 38
+"lvs10"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT01\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(4);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.174066482897 -8.072931276298021 1 E 153 126 212 155
+6 40
+"lvs13"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT02\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(7);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.1740664828969 46.86255259466966 1 E 153 126 212 155
+6 42
+"lvs16"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT03\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(10);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.1740664828969 91.92706872370198 1 E 153 126 212 155
+6 44
+"lvs19"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT04\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(13);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.174066482897 146.927068723702 1 E 153 126 212 155
+6 46
+"lvs22"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT05\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(16);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.1740664828969 191.927068723702 1 E 153 126 212 155
+6 48
+"lvs25"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT06\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(19);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.1740664828969 246.927068723702 1 E 153 126 212 155
+6 50
+"lvs28"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+50 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/VFAT07\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(22);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 466.1740664828969 291.927068723702 1 E 153 126 212 155
+6 51
+"lvs32"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V08\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(26);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 352.3990182328188 1 E 153 126 212 155
+6 52
+"lvs35"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V09\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(29);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 397.399018232819 1 E 153 126 212 155
+6 53
+"lvs8"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+53 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V00\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(2);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 -52.65147265077175 1 E 153 126 212 155
+6 54
+"lvs11"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V01\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(5);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 -9.353728933376374 1 E 153 126 212 155
+6 55
+"lvs14"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+55 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V02\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(8);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 47.28401122019596 1 E 153 126 212 155
+6 56
+"lvs17"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+56 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V03\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(11);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 92.34852734922828 1 E 153 126 212 155
+6 57
+"lvs20"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+57 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V04\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(14);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 147.3485273492283 1 E 153 126 212 155
+6 58
+"lvs23"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V05\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(17);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 192.3485273492282 1 E 153 126 212 155
+6 59
+"lvs26"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+59 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V06\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(20);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 247.3485273492282 1 E 153 126 212 155
+6 60
+"lvs29"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH2V07\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(23);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 523.5631592640475 292.3485273492282 1 E 153 126 212 155
+6 61
+"lvs33"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+61 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V08\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(27);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 352.399018232819 1 E 153 126 212 155
+6 62
+"lvs36"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+62 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V09\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(30);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 397.399018232819 1 E 153 126 212 155
+6 63
+"lvs9"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+63 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V00\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(3);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 -52.65147265077164 1 E 153 126 212 155
+6 64
+"lvs12"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+64 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V01\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(6);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 -7.651472650771623 1 E 153 126 212 155
+6 65
+"lvs15"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+65 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V02\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(9);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 47.28401122019608 1 E 153 126 212 155
+6 66
+"lvs18"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+66 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V03\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(12);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 92.34852734922836 1 E 153 126 212 155
+6 67
+"lvs21"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+67 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V04\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(15);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 147.3485273492284 1 E 153 126 212 155
+6 68
+"lvs24"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+68 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V05\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(18);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 192.3485273492284 1 E 153 126 212 155
+6 69
+"lvs27"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+69 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V06\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(21);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 247.3485273492284 1 E 153 126 212 155
+6 70
+"lvs30"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+70 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"GEM_LV\", \"GEM_HV/GEM_Detector_LV/OH4V07\");
+}" 0
+ "main(mapping event)
+{
+  LvChAlarm(24);
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 583.9654260921486 292.3485273492283 1 E 153 126 212 155
+2 71
+"PRIMITIVE_TEXT21"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+71 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.5302942511774533 0 0.5897615708274895 504.3240000773384 -30.69214586255305 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5  VFAT
+LANG:10001 5  VFAT
+2 72
+"PRIMITIVE_TEXT22"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+72 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.5302942511774533 0 0.5897615708274895 561.1283848859998 -30.69214586255305 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 4 OH2V
+LANG:10001 4 OH2V
+2 73
+"PRIMITIVE_TEXT23"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+73 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.5302942511774533 0 0.5897615708274895 626.1952256668296 -30.69214586255305 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 4 OH4V
+LANG:10001 4 OH4V
+2 81
+"PRIMITIVE_TEXT27"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+81 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.8040582434211261 0 0.5897615708274895 335.2735769945604 514.2152875175316 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 9 AC/DC 48V
+LANG:10001 9 AC/DC 48V
+6 82
+"stMao"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ "main(mapping event)
+{
+  ChildPanelOn(\"/fwCaen/fwCaenChannelOperation\", \"MAO CH1\",makeDynString(\"$sDpName:CAEN/GEM_CAEN_LV/branchController00/easyCrate0/powerConverter22/channel000\"),0,0);
+}" 0
+ E
+82 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main(mapping event)
+{
+   ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+mao[1]));
+}" 0
+ 0 1 3 2 1 E 2.205358005902379 0 1 177.532206995546 456.1290322580644 1 E 153 126 212 155
+2 83
+"PRIMITIVE_TEXT28"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+83 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 343.3199152847674 568.4733520336604 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 LV HW
+LANG:10001 5 LV HW
+6 84
+"RECTANGLE2"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+84 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 2.187852802571512 0 1 181.2433101016898 516.9495091164096 1 E 153 126 212 155
+2 85
+"PRIMITIVE_TEXT29"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+85 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 343.3199152847674 541.344319775596 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 HV HW
+LANG:10001 5 HV HW
+6 86
+"RECTANGLE3"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+86 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 2.187852802571512 0 1.068965517241379 181.2433101016898 477.2598539439958 1 E 153 126 212 155
+2 87
+"tthv"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+87 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.4153496617421644 0 0.5897615708274895 458.3178740609455 -30.32117812061735 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 2 HV
+LANG:10001 2 HV
+30 131
+"FRAME10"
+""
+1 39 88 E E E 1 E 1 E N "STD_value_invalid" E N {0,0,0} E E
+ E E
+131 0 0 0 0 0
+E E E
+1
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.5357142857142857 0 1.165505226480836 718.1071428571429 -87.56445993031369 0 E 39 88 432 663
+2
+LANG:1 34 MS Sans Serif,-1,20,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,20,5,50,0,0,0,0,0
+0 2
+LANG:1 3 PMT
+LANG:10001 3 GAS
+2 172
+"PRIMITIVE_TEXT50"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+172 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 725.9058661557868 401.8583450210377 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 PMT 9
+LANG:10001 8 GEM M L1
+6 173
+"pmt9"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+173 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT08\");
+}" 0
+ "main(mapping event)
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT08\");
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 348.334502103787 1 E 153 126 212 155
+2 174
+"PRIMITIVE_TEXT51"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+174 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 727.0819698339085 446.8583450210377 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 2
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 6 PMT 10
+LANG:10001 8 GEM M L2
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 1
+LANG:1 0 
+6 175
+"pmt10"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+175 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT09\");
+}" 0
+ "main(mapping event)
+{
+  //ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[1]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 393.334502103787 1 E 153 126 212 155
+2 176
+"PRIMITIVE_TEXT52"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+176 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 724.2151172423057 -3.19214586255282 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 PMT 1
+LANG:10001 9 GEM 27 L1
+6 177
+"pmt1"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+177 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT00\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[1]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 -56.65147265077161 1 E 153 126 212 155
+2 178
+"PRIMITIVE_TEXT53"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+178 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.744928602331989 0 0.5897615708274895 726.0256984418576 41.80785413744718 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 PMT 2
+LANG:10001 9 GEM 27 L2
+6 179
+"pmt2"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+179 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT01\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[2]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 -11.7159887798037 1 E 153 126 212 155
+2 180
+"PRIMITIVE_TEXT54"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+180 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 724.1603675363817 96.74333800841492 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 PMT 3
+LANG:10001 9 GEM 28 L1
+6 181
+"pmt3"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+181 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT02\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[3]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 43.21949509116396 1 E 153 126 212 155
+2 182
+"PRIMITIVE_TEXT55"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+182 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.744928602331989 0 0.5897615708274895 725.9716787320124 141.8078541374472 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 PMT 4
+LANG:10001 9 GEM 28 L2
+6 183
+"pmt4"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+183 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT03\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[4]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 88.28401122019631 1 E 153 126 212 155
+2 184
+"PRIMITIVE_TEXT56"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+184 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 724.1056178304577 196.8078541374472 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 PMT 5
+LANG:10001 9 GEM 29 L1
+6 185
+"RECTANGLE30"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+185 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT04\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[5]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 143.2840112201963 1 E 153 126 212 155
+2 186
+"PRIMITIVE_TEXT57"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+186 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.744928602331989 0 0.5897615708274895 725.9176590221673 241.8078541374472 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 PMT 6
+LANG:10001 9 GEM 29 L2
+6 187
+"pmt6"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+187 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT05\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[6]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 188.2840112201963 1 E 153 126 212 155
+2 188
+"PRIMITIVE_TEXT58"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+188 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7549952050662049 0 0.5897615708274895 724.0508681245333 296.8078541374472 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 PMT 7
+LANG:10001 9 GEM 30 L1
+6 189
+"pmt7"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+189 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT06\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[7]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 243.2840112201963 1 E 153 126 212 155
+2 190
+"PRIMITIVE_TEXT59"
+""
+1 53 125 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+190 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.744928602331989 0 0.5897615708274895 725.8636393123222 341.8078541374472 0 E 53 125 162 167
+0 2 2 "0s" 0 0 0 64 0 0  53 125 1
+2
+LANG:1 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+LANG:10001 34 MS Sans Serif,-1,17,5,50,0,0,0,0,0
+0 2
+LANG:1 5 PMT 8
+LANG:10001 9 GEM 30 L2
+6 191
+"pmt8"
+""
+1 153 126 E E E 1 E 1 E N {0,0,0} E N "FwStateOKNotPhysics" E E
+ E E
+191 0 0 0 0 0
+E E E
+0
+2
+LANG:1 0 
+LANG:10001 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT07\");
+}" 0
+ "main(mapping event)
+{
+  ChildPanelOnCentralModal(\"/CMS_GEM_CAEN/Alarm\", \"ALPN\",makeDynString(\"$ChNo:\"+hvchannels[8]));
+}" 0
+ 0 1 3 2 1 E 0.5076508965951241 0 1 786.3178712264254 288.2840112201962 1 E 153 126 212 155
+6 192
+"RECTANGLE31"
+""
+1 160 60 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+192 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.6288605372273908 0 0.7879557403225369 -67.18213845325622 24.4554494488868 2  1 0  "pictures/hodocope.PNG" 4294967295 E 160 60 630 410
+10 193
+"TS001"
+""
+1 0 0 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E "main()
+{
+ 
+}" 0
+
+193 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 TS1
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  
+  fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT00\");
+}" 0
+ "main()
+ {
+ 
+ DV_Show(\"PMT00\");
+}" 0
+ 0 1 1 2 1 E 0.8200341405445176 0 0.7879557403225369 -138.8722396971788 -10.21460312530482 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 194
+"T00S2"
+""
+1 -1.666666666666667 0 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+194 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 TS2
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+    fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT01\");
+}" 0
+ "main()
+{
+  DV_Show(\"PMT01\");
+}" 0
+ 0 1 1 2 1 E 0.8451885620336133 0 0.7879557403225369 -93.9464429176539 -10.21460312530482 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 195
+"TS003"
+""
+1 -41.66666666666667 0 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+195 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 TS3
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+    fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT02\");
+}" 0
+ "main()
+{
+  DV_Show(\"PMT02\");
+}" 0
+ 0 1 1 2 1 E 0.8552503306292515 0 0.7879557403225369 -46.05242440241587 -10.21460312530482 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 196
+"TS004"
+""
+1 -86.66666666666667 0 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+196 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 TS4
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+    fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT03\");
+}" 0
+ "main()
+{
+  DV_Show(\"PMT03\");
+}" 0
+ 0 1 1 2 1 E 0.9055591736074427 0 0.7879557403225369 -7.817703738990531 -10.21460312530482 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 197
+"TS005"
+""
+1 -131.6666666666667 0 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+197 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 TS5
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+    fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT04\");
+}" 0
+ "main()
+{
+  DV_Show(\"PMT04\");
+}" 0
+ 0 1 1 2 1 E 0.754632644672869 0 0.7879557403225369 85.00211155577236 -10.21460312530482 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 198
+"BS001"
+""
+1 41.66666666666667 -218 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+198 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 BS1
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+   fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT05\");
+}" 0
+ "main()
+{
+ DV_Show(\"PMT05\");
+}" 0
+ 0 1 1 2 1 E 0.754632644672869 0 0.7879557403225369 -122.5218657292666 215.9286943472633 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 199
+"BS002"
+""
+1 1.666666666666667 -218 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+199 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 BS2
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+   fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT06\");
+}" 0
+ "main()
+{
+   DV_Show(\"PMT06\");
+}" 0
+ 0 1 1 2 1 E 0.8300959091401559 0 0.7879557403225369 -90.3242062232242 215.9286943472633 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 200
+"BS003"
+""
+1 -43.33333333333334 -218 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+200 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 BS3
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+   fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT07\");
+}" 0
+ "main()
+{
+   DV_Show(\"PMT07\");
+}" 0
+ 0 1 1 2 1 E 0.880404752118347 0 0.7879557403225369 -52.08948555979885 215.9286943472633 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 201
+"BS004"
+""
+1 -88.33333333333334 -218 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+201 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 BS4
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+   fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT08\");
+}" 0
+ "main()
+{
+  DV_Show(\"PMT08\");
+}" 0
+ 0 1 1 2 1 E 0.9432908058410862 0 0.7879557403225369 -16.87329547506495 215.9286943472633 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 202
+"BS005"
+""
+1 -128.3333333333333 -218 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+202 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 BS5
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+    fwDU_connectState(\"StatusUpdate\",1,\"PMT\", \"GEM_HV/GEM_PMT/PMT09\");
+}" 0
+ "main()
+{
+   DV_Show(\"PMT09\");
+}" 0
+ 0 1 1 2 1 E 0.754632644672869 0 0.7879557403225369 85.00211155577236 215.9286943472633 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 203
+"POLYGON1"
+""
+1 -131.6666666666667 0 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+203 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 CST
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+    fwCU_connectState(\"showColor\", \"CST\");
+}" 0
+ "main()
+{
+  fwUi_showFsmObject(\"TS005\", \"CST\");
+}" 0
+ 0 1 1 2 1 E 0.002733115937917424 0.5589929418478304 -0.6288564127331312 0.001687137167223972 381.7693511180665 -26.77598245063173 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+10 204
+"POLYGON2"
+""
+1 -131.6666666666667 0 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+204 0 0 0 0 0
+E E E
+0
+1
+LANG:1 3 CSB
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+    fwCU_connectState(\"showColor\", \"CSB\");
+}" 0
+ "main()
+{ fwUi_showFsmObject(\"TS001\", \"CSB\");
+}" 0
+ 0 1 1 2 1 E -0.005408073685925891 -0.6110301781776923 0.6284641856476775 -0.02455394109878449 -17.98775167355176 434.153481369139 1 E 5 250 130
+290 130
+270 120
+260 120
+240 130
+ 1
+7 205
+"ELLIPSE1"
+""
+1 95 315 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+205 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+    fwCU_connectState(\"showColor\", \"CSB\");
+}" 0
+ E 0 1 1 2 1 E 0.6288605372273908 0 0.7879557403225369 -6.891242645339901 21.0779530185972 1 E 95 315 5 5
+7 206
+"ELLIPSE2"
+""
+1 95 315 E E E 1 E 1 E N {0,0,0} E N "STD_undifined" E E
+ E E
+206 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+    fwCU_connectState(\"showColor\", \"CST\");
+}" 0
+ E 0 1 1 2 1 E 0.6288605372273908 0 0.7879557403225369 250.3924328465761 -127.6200084333628 1 E 95 315 5 5
+30 207
+"dview"
+""
+1 30 374 E E E 1 E 1 E N "FwStateOKNotPhysics" E N {0,0,0} E E
+ E E
+207 0 0 0 0 0
+E E E
+1
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 30 374 321 651
+1
+LANG:1 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 1
+LANG:1 11 Frame Title
+2 216
+"PRIMITIVE_TEXT61"
+""
+1 40 410 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+213 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1 0 0.7272727272727273 7.706205705125285 111.2727272727273 0 E 40 410 140 450
+0 2 2 "0s" 0 0 0 65 0 0  40 410 1
+1
+LANG:1 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 1
+LANG:1 8 VOLTAGE:
+2 217
+"PRIMITIVE_TEXT62"
+""
+1 40 410 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+214 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1 0 0.7272727272727273 7.706205705125285 160.1072293765142 0 E 40 410 140 450
+0 2 2 "0s" 0 0 0 65 0 0  40 410 1
+1
+LANG:1 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 1
+LANG:1 8 Current:
+2 219
+"dvVolt"
+""
+1 40 410 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+216 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1 0 0.7272727272727273 133.9391576611264 109.8181818181818 0 E 40 410 140 450
+0 2 2 "0s" 0 0 0 65 0 0  40 410 1
+1
+LANG:1 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 1
+LANG:1 0 
+2 220
+"dvCurrent"
+""
+1 40 410 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+217 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1 0 0.7272727272727273 133.9391576611264 158.6526839219688 0 E 40 410 140 450
+0 2 2 "0s" 0 0 0 65 0 0  40 410 1
+1
+LANG:1 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 1
+LANG:1 0 
+2 221
+"PRIMITIVE_TEXT65"
+""
+1 40 410 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+218 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1.079748022066103 0 0.7272727272727273 0.5288837191759939 250.3877342853498 0 E 40 410 140 450
+0 2 2 "0s" 0 0 0 65 0 0  40 410 1
+1
+LANG:1 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 1
+LANG:1 12 Set VOLTAGE:
+2 222
+"PRIMITIVE_TEXT66"
+""
+1 40 410 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+219 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1 0 0.7272727272727273 7.706205705125271 299.2222363891368 0 E 40 410 140 450
+0 2 2 "0s" 0 0 0 65 0 0  40 410 1
+1
+LANG:1 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 1
+LANG:1 12 Set Current:
+2 223
+"dvVset"
+""
+1 40 410 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+220 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1 0 0.7272727272727273 133.9391576611264 248.9331888308044 0 E 40 410 140 450
+0 2 2 "0s" 0 0 0 65 0 0  40 410 1
+1
+LANG:1 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 1
+LANG:1 0 
+2 224
+"dvCset"
+""
+1 40 410 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+221 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 1 2 1 E 1 0 0.7272727272727273 133.9391576611264 297.7676909345914 0 E 40 410 140 450
+0 2 2 "0s" 0 0 0 65 0 0  40 410 1
+1
+LANG:1 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 1
+LANG:1 0 
+10 226
+"POLYGON4"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+223 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI01_LAYER1\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -513.2912988928633 31.80666324534901 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+10 227
+"POLYGON5"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+224 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI01_LAYER2\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -440.7958772667577 31.80666324534901 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+10 228
+"POLYGON6"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+225 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI04_LAYER1\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -513.2912988928633 67.9532641786366 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+10 229
+"POLYGON7"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+226 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI02_LAYER2\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -440.7958772667576 67.9532641786366 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+10 230
+"POLYGON8"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+227 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI03_LAYER1\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -513.2912988928633 108.3065103611421 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+10 231
+"POLYGON9"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+228 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI03_LAYER2\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -440.7958772667576 108.3065103611421 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+10 232
+"POLYGON10"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+229 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI04_LAYER1\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -513.2912988928633 143.9444033989217 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+10 233
+"POLYGON11"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+230 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI04_LAYER2\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -440.7958772667576 143.9444033989217 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+10 234
+"POLYGON12"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+231 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI05_LAYER1\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -513.2912988928633 180.504624697309 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+10 235
+"POLYGON13"
+""
+1 1050 400 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+232 0 0 0 0 0
+E E E
+0
+1
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+"main()
+{
+  fwCU_connectState(\"showColor\", \"GEMINI05_LAYER2\");
+}" 0
+ E 0 1 1 2 1 E 0.5936632918692486 0 0.2356655772813184 -440.7958772667576 180.504624697309 1 E 4 1050 400
+1110 400
+1090 320
+1070 320
+ 1
+0
+LAYER, 1 
+1
+LANG:1 0 
+0
+LAYER, 2 
+1
+LANG:1 0 
+0
+LAYER, 3 
+1
+LANG:1 0 
+0
+LAYER, 4 
+1
+LANG:1 0 
+0
+LAYER, 5 
+1
+LANG:1 0 
+0
+LAYER, 6 
+1
+LANG:1 0 
+0
+LAYER, 7 
+1
+LANG:1 0 
+0
+0

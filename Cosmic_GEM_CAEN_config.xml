@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_configuration>
+	
+	<stop_drivers>
+		<manager>
+		<driver>RDB Archive Manager</driver>
+		<num>1</num>
+		</manager>
+	</stop_drivers>
+	<target>
+		<system_name>cms_gem_dcs_1:</system_name>
+		<configuration>
+			<tag>Cosmic_CAEN_ALL_V001</tag>
+			<hardware>true</hardware>
+			<logical>true</logical>
+			<pattern>*</pattern>
+			<force_reinstall>true</force_reinstall>
+		</configuration>
+		<configuration>
+			<tag>Cosmic_CAENTREND_V001</tag>
+			<hardware>true</hardware>
+			<logical>false</logical>
+			<pattern>*</pattern>
+			<force_reinstall>true</force_reinstall>
+		</configuration>
+       </target>
+</component_configuration>
